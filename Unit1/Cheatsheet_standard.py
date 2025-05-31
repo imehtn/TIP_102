@@ -311,4 +311,18 @@ while i < 6:
 i = 1
 while i < 6:
     print(i)
+   
     
+#-----------------------------------
+#comparing strings and lists 
+
+#both ordered, can be indexed by integers, sliceable, iterable, and len() can be used
+#content type: strings can only contain char elements, lists can be of any type
+#mutability: strings are immutable/not changeable, lists are mutable 
+
+s = 'Try'
+s[0] = 'C' # Results in TypeError: 'str' object does not support item assignment
+
+lst = ['T', 'r', 'y']
+lst[0] = 'C'
+print(lst) # Prints ['C', 'r', 'y'] 
