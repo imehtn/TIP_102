@@ -1,4 +1,4 @@
-#print
+print("\nprint\n")
 
 # Example 1: Printing a string
 print("Welcome to TIP102!") # Prints "Welcome to TIP102!" to the console
@@ -23,7 +23,7 @@ print(x + y) # Prints 8 to the console
 
 
 #-----------------------------------
-#length
+print("\nlength\n")
 
 # Example 1: Getting the length of a list
 lst = ['a', 'b', 'c']
@@ -37,7 +37,8 @@ print(s_length) # Output: 4
 
 
 #-----------------------------------
-#range
+print("\nrange\n")
+
 
 # Example 1: Just the stop value 
 range(10) # Evaluates to the sequence: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
@@ -50,13 +51,13 @@ range(0, 30, 5) # Evaluates to the sequence: 0, 5, 10, 15, 20, 25
 
 
 #-----------------------------------
-#sum
+print("\sum\n")
 
 sum([1, 2, 3, 4]) # Evaluates to 10
 
 
 #-----------------------------------
-#min
+print("\nmin\n")
 
 # Example 1: Minimum item in a list
 min([2, 3, 4, 1, 5]) # Evaluates to 1
@@ -69,7 +70,7 @@ min(['a', 'b', 'c', 'aa']) # Evaluates to 'a'
 
 
 #-----------------------------------
-#max
+print("\max\n")
 
 # Example 1: Maximum item in a list
 max([2, 3, 5, 1, 4]) # Evaluates to 5
@@ -82,7 +83,7 @@ max(['a', 'b', 'c', 'aa']) # Evaluates to 'c'
 
 
 #-----------------------------------
-#append method 
+print("\append method\n")
 
 # Example 1: Add an integer to the list
 lst = [1, 2, 3, 4]
@@ -91,7 +92,7 @@ print(lst) # Prints [1, 2, 3, 4, 5]
 
 
 #-----------------------------------
-#sort method
+print("\nsort method\n")
 
 # Example 1: List of integers
 lst = [4, 2, 1, 3]
@@ -106,7 +107,7 @@ print(lst) # Prints ['a', 'b', 'c', 'd']
 
 
 #-----------------------------------
-#lower method
+print("\nlower method\n")
 
 # Example 1: Mixed case
 s = 'Hello World!'
@@ -120,7 +121,7 @@ print(lowered) # Prints 'hello world'
 
 
 #-----------------------------------
-#split method
+print("\nsplit method\n")
 
 # Example 1: Split along whitespace
 s = 'Never gonna give you up'
@@ -134,7 +135,7 @@ print(split) # Prints ['Never', 'gonna', 'let', 'you', 'down']
 
 
 #-----------------------------------
-#join method
+print("\njoin method\n")
 
 # Example 1: Join items in a list separated by space
 lst = ['Never', 'gonna', 'run', 'around', 'and', 'desert', 'you']
@@ -148,7 +149,7 @@ print(joined) # Prints 'Never-gonna-make-you-cry'
 
 
 #-----------------------------------
-#strip method
+print("\nstrip method\n")
 
 # Example 1: Strip whitespace
 s = '       Never gonna say goodbye       '
@@ -162,7 +163,7 @@ print(stripped) # Prints 'Never gonna tell a lie and hurt you'
 
 
 #-----------------------------------
-#Variables
+print("\nvariables\n")
 
 # Example 1: Integer variable
 var1 = 10
@@ -186,7 +187,7 @@ print(x) # Prints 'Hello'
 
 
 #-----------------------------------
-#Conditionals 
+print("\nconditionals\n") 
 
 # Example 1: Simple if statement
 x = 3
@@ -225,7 +226,7 @@ else:
 
 
 #-----------------------------------
-#functions
+print("\nfunctions\n")
 
 # Example: Function that prints Hello world!
 def function_example():
@@ -260,7 +261,7 @@ print(return_val1) # Output: 6
 print(return_val2) # Output: None
 
 #-----------------------------------
-#formatted strings 
+print("\nformatted strings\n")
 
 # Example 1: Adding a variable to a string
 name = "Michael"
@@ -279,7 +280,7 @@ print(5 % 2) # Prints 1 because 5 / 2 = 2 remainder 1
 print(10 % 2) # Prints 0 because 10 / 2 = 5 remainder 0 
 
 #-----------------------------------
-#for loops
+print("\nfor loops\n")
 
 # Example 1: Iterating over a list
 fruits = ["apple", "banana", "cherry"]
@@ -292,7 +293,7 @@ for i in range(5):
     
     
 #-----------------------------------
-#while loops
+print("\nwhile loops\n")
 
 # Example 1: Indeterminate number of iterations
 # Prompting user for input until they enter a valid response
@@ -314,7 +315,7 @@ while i < 6:
    
     
 #-----------------------------------
-#comparing strings and lists 
+print("\ncomparing strings and lists\n")
 
 #both ordered, can be indexed by integers, sliceable, iterable, and len() can be used
 #content type: strings can only contain char elements, lists can be of any type

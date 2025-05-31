@@ -1,4 +1,4 @@
-#enumerate 
+print("\nenumerate\n")
 
 # Example 1: Iterating over indices and characters in a string
 my_string = 'code'
@@ -23,7 +23,7 @@ for count, cereal in enumerate(cereals, start=1):
 
 
 #-----------------------------------
-#zip
+print("\nzip\n")
 
 # Example 1: Zipping Two Lists
 names = ['Alice', 'Bob', 'Charlie']
@@ -39,7 +39,7 @@ print(list(zipped)) # Prints [('Alice', 25), ('Bob', 30), ('Charlie', 35)]
 
 
 #-----------------------------------
-#nested lists
+print("\nnested lists\n")
 
 # Simple List
 singers = ["Sabrina Carpenter", "FKA Twigs", "Elliot Smith"]
@@ -106,5 +106,41 @@ print(matrix) # Output: [[1, 2, 3], [4, 'Suprise!', 6], [7, 8, 9]]
 
 
 #------------------------------------
-#nested loops
+print("\nnested loops\n")
 
+for i in range(1, 4):
+    print("Outer loop incremented")
+    for j in range(1, 4):
+        print(f"i = {i}, j = {j}")
+
+# Output:
+#outer loop incremented
+# i = 1, j = 1
+# i = 1, j = 2
+# i = 1, j = 3
+#outer loop incremented
+# i = 2, j = 1
+# i = 2, j = 2
+# i = 2, j = 3
+# outer loop incremented
+# i = 3, j = 1
+# i = 3, j = 2
+# i = 3, j = 3
+
+#used to iterate over nested lists and matrices 
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Using nested loops to iterate over the matrix
+for row in matrix:
+    for item in row:
+        print(item, " ")
+    print()  # Print a new line after each row
+
+# Output:
+# 1 2 3
+# 4 5 6
+# 7 8 9
