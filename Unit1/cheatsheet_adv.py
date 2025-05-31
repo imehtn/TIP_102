@@ -240,3 +240,14 @@ while nums1_pointer < len(nums1) and nums2_pointer < len(nums2):
 
 #-----------------------------------
 print("\nbonus syntax and concepts\n")
+
+#lst.insert(x, item) -> Inserts item into list at index x
+#lst.remove(item) Removes item from list
+#lst.pop(x) Removes element at index x from list
+#lst.copy() Creates a copy of a list
+#abs(x) Returns the absolute value of a number x.
+#s.isalpha() Returns True if all characters in given string are alphabetic letters (a-z).
+#s.isalnum() Returns True if all characters in given string are alphanumeric (a-z or 0-9).
+#s.find(x) Returns start index of the first occurrence of substring x in a given string. Returns -1 if x is not in the string.
+#s.count(x) Returns the frequency of the substring x in the given string
+#Sets A useful data type that allow you to group multiple pieces of data together. Data in sets is unordered, unchangeable, and cannot contain duplicates.
