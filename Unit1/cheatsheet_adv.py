@@ -127,7 +127,7 @@ for i in range(1, 4):
 # i = 3, j = 2
 # i = 3, j = 3
 
-#used to iterate over nested lists and matrices 
+
 matrix = [
     [1, 2, 3],
     [4, 5, 6],
@@ -144,3 +144,99 @@ for row in matrix:
 # 1 2 3
 # 4 5 6
 # 7 8 9
+
+
+numbers = [3, 5, 2]
+
+# Outer for loop iterates over each number in the list
+for num in numbers:
+    print(f"Counting down from {num}:")
+    
+    # Inner while loop counts down from the current number to 0
+    while num >= 0:
+        print(num)
+        num -= 1  # Decrement the number by 1 each time
+    
+    print("---")  # Separator to indicate moving to the next number
+
+# Output:
+# Counting down from 3:
+# 3
+# 2
+# 1
+# 0
+# ---
+# Counting down from 5:
+# 5
+# 4
+# 3
+# 2
+# 1
+# 0
+# ---
+# Counting down from 2:
+# 2
+# 1
+# 0
+# ---
+
+#drawbacks of nested loops: 
+#performaces - nested loops can increase the time it takes for the code to run
+#readability - deeply nested loops can make code difficultt to read
+
+
+#-----------------------------------
+print("\nlist comprehensions\n")
+
+#shorthand syntax for creating a new list using values of an existing list
+
+#double each value in a list
+#result_list = [expression for element in lst]
+nums = [1, 2, 3, 4, 5]
+doubled = [value * 2 for value in nums]
+print(nums) # Output: [2, 4, 6, 8, 10]
+
+#find strings with length greater than 5
+#result_list = [expression for element in lst if condition
+words = ["I", "Love", "Codepath!"]
+result = [word for word in words if len(word) > 5]
+print(result) # Output: ['Codepath!']
+
+
+#------------------------------------
+print("\nTwo pointer technique\n")
+
+#two pointer variables are initialized to track different indices and move them 
+# to new indices based on certain conditions
+
+#opposite direction pointers to reverse characters in a string
+word= "hello"
+left_pointer = 0
+right_pointer = len(word) - 1
+while left_pointer < right_pointer:
+    pass
+    left_pointer += 1
+    right_pointer -= 1
+    
+#same direction pointers to merge two sorted lists
+nums1 = [1, 3, 5]
+nums2 = [1, 3, 5]
+
+nums1_pointer = 0
+nums2_pointer = 0
+
+while nums1_pointer < len(nums1) and nums2_pointer < len(nums2):
+    if (1<2): #change for actual contiion
+        # <operation>
+        nums1_pointer += 1
+    else:
+        # <operation>
+        nums2_pointer += 1
+        
+#when to use a two-pointer approach:
+#data structure (strings, array, linked lists), reducing nested loops, 
+#searching for pairs/triplets, in place opperations, in place operations, 
+#cmparing opposite ends of a sequence, partitioning problems 
+
+#-----------------------------------
+print("\nbonus syntax and concepts\n")
