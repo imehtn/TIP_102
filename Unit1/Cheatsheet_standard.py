@@ -51,7 +51,7 @@ range(0, 30, 5) # Evaluates to the sequence: 0, 5, 10, 15, 20, 25
 
 
 #-----------------------------------
-print("\sum\n")
+print("\nsum\n")
 
 sum([1, 2, 3, 4]) # Evaluates to 10
 
@@ -70,7 +70,7 @@ min(['a', 'b', 'c', 'aa']) # Evaluates to 'a'
 
 
 #-----------------------------------
-print("\max\n")
+print("\nmax\n")
 
 # Example 1: Maximum item in a list
 max([2, 3, 5, 1, 4]) # Evaluates to 5
