@@ -222,5 +222,93 @@ else:
   print("x and y are equal")
 
 # Output: 'x and y are equal'
+
+
 #-----------------------------------
+#functions
+
+# Example: Function that prints Hello world!
+def function_example():
+  print("Hello world!")
+  
+# Example: Calling a function
+function_example() # Prints 'Hello world!'
+
+
+# Example: Function with 2 parameters
+def function_w_parameters(parameter1, parameter2):
+  print("Parameter 1: ", parameter1)
+  print("Parameter 2: ", parameter2)
+
+function_w_parameters("Interview", "Prep")
+# Output:
+# Parameter 1: Interview
+# Parameter 2: Prep
+
+# Example: Function that returns sum of two numbers
+def sum(a, b):
+  return a + b
+
+
+# Example: Function without a return value
+def sum_without_returning(a, b):
+  a + b
+
+return_val1 = sum(4, 2)
+return_val2 = sum_without_returning(4, 2)
+print(return_val1) # Output: 6
+print(return_val2) # Output: None
+
 #-----------------------------------
+#formatted strings 
+
+# Example 1: Adding a variable to a string
+name = "Michael"
+print(f"Welcome to Codepath, {name}!") # Prints 'Welcome to CodePath, Michael!'
+
+# Example 2: Adding an expression to a string
+a = 3
+b = 5
+print(f"The sum of {a} and {b} is {a + b}") # Prints 'The sum of 3 and 5 is 8'
+
+#-----------------------------------
+#remainder division
+
+print(5 % 2) # Prints 1 because 5 / 2 = 2 remainder 1
+
+print(10 % 2) # Prints 0 because 10 / 2 = 5 remainder 0 
+
+#-----------------------------------
+#for loops
+
+# Example 1: Iterating over a list
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)  # Outputs each fruit on a new line
+
+# Example 2: Using a for loop with a range
+for i in range(5):
+    print(i)  # Prints numbers 0 to 4
+    
+    
+#-----------------------------------
+#while loops
+
+# Example 1: Indeterminate number of iterations
+# Prompting user for input until they enter a valid response
+user_input = ""
+while user_input != "quit":
+    user_input = input("Enter a command (type 'quit' to exit): ")
+print("You exited the loop.")
+
+# Example 2: Processing data until a condition is met
+i = 1
+while i < 6:
+    print(i)  
+    i += 1 
+    
+# Example: Infinite Loop
+i = 1
+while i < 6:
+    print(i)
+    
