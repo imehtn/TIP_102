@@ -210,17 +210,14 @@ print(running_sum(superhero_stats)) # [3, 4, 6, 16, 17]
 print("\nProblem 12")
 
 def shuffle(cards):
-    left = 0
-    right = int(len(cards)/2)
-    res = []
-    for card in cards:
-        if right == len(cards):
-            return res
-        else: 
-          res.append(cards[left])
-          left+=1
-          res.append(cards[right])
-          right+=1      
+    n = len(cards) // 2
+    shuffled = []
+    
+    for i in range(n):
+        shuffled.append(cards[i])
+        shuffled.append(cards[i + n])
+    
+    return shuffled     
 
 cards = ['Joker', 'Queen', 2, 3, 'Ace', 7]
 print(shuffle(cards)) #['Joker', 3, 'Queen', 'Ace', 2, 7]
