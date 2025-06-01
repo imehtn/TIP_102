@@ -148,7 +148,10 @@ print_todo_list(task)
 #Pooh's To Dos:
 
 #------------------------------------
-#Problem 9: 
+#Problem 9: Rabbit is very particular about his belongings and wants to own 
+# an even number of each thing he owns. Write a function can_pair() that 
+# accepts a list of integers item_quantities. Return True if each number in 
+# item_quantities is even. Return False otherwise.
 
 print("\nProblem 9")
 
@@ -163,3 +166,70 @@ print(can_pair(item_quantities)) # False
 
 item_quantities = []
 print(can_pair(item_quantities)) # True 
+
+#------------------------------------
+#Problem 10: Piglet's has collected a big pile of his favorite food, 
+# haycorns, and wants to split them evenly amongst his friends. Write a 
+# function split_haycorns() to help Piglet determine the number of ways he 
+# can split his haycorns into even groups. split_haycorns() accepts a positive
+# integer quantity as a parameter and returns a list of all divisors of 
+# quantity.
+
+print("\nProblem 10")
+
+def split_haycorns(quantity):
+    list = []
+    for i in range(1, quantity + 1):
+        if quantity % i ==0:
+            list.append(i)
+    return list
+
+quantity = 6
+print(split_haycorns(quantity)) # [1, 2, 3, 6]
+
+quantity = 1
+print(split_haycorns(quantity)) # [1]
+
+#-------------------------------------
+#Problem 11: Signs in the Hundred Acre Wood have been losing letters as 
+# Tigger bounces around stealing any letters he needs to spell out his name.
+# Write a function tiggerfy() that accepts a string s, and returns a new 
+# string with the letters t, i, g, e, and r from it.
+
+print("\nProblem 11")
+
+def tiggerfy(s):
+    tiger = "tiger"
+    final_string = ""
+    for char in s:
+        if char.lower() not in tiger:
+            final_string += char
+    return final_string
+
+s = "suspicerous"
+print(tiggerfy(s)) # "suscerous"
+
+s = "Trigger"
+print(tiggerfy(s)) # ""
+
+s = "Hunny"
+print(tiggerfy(s)) # "hunny"
+
+#-------------------------------------
+#Problem 12: 
+
+print("\nProblem 12")
+
+def locate_thistles(items):
+    indices = []
+    for count, item in enumerate(items):
+        if "thistle" in item:
+            indices.append(count)
+    return indices
+
+items = ["thistle", "stick", "carrot", "thistle", "eeyore's tail"]
+print(locate_thistles(items)) # [0, 3]
+
+items = ["book", "bouncy ball", "leaf", "red balloon"]
+print(locate_thistles(items)) # []
+    

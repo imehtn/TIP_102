@@ -101,7 +101,8 @@ matrix = [
             [1, 2, 3],
             [4, 5, 6],
             [7, 8, 9]]
-matrix[1][1] = "Surprise!"
+
+matrix[1][1] = "Surprise!" # type: ignore
 print(matrix) # Output: [[1, 2, 3], [4, 'Suprise!', 6], [7, 8, 9]]
 
 

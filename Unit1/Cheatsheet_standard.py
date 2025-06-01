@@ -253,7 +253,7 @@ def sum(a, b):
 
 # Example: Function without a return value
 def sum_without_returning(a, b):
-  a + b
+  a + b # type: ignore
 
 return_val1 = sum(4, 2)
 return_val2 = sum_without_returning(4, 2)
@@ -322,7 +322,7 @@ print("\ncomparing strings and lists\n")
 #mutability: strings are immutable/not changeable, lists are mutable 
 
 s = 'Try'
-s[0] = 'C' # Results in TypeError: 'str' object does not support item assignment
+s[0] = 'C' # type: ignore # Results in TypeError: 'str' object does not support item assignment
 
 lst = ['T', 'r', 'y']
 lst[0] = 'C'
