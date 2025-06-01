@@ -2,7 +2,7 @@
 
 #------------------------------------
 #Problem 1: Write a function welcome() that prints the string "Welcome to The Hundred Acre Wood!"
-print("problem 1")
+print("Problem 1")
 
 def welcome():
     print("Welcome to The Hundred Acre Wood!")
@@ -13,7 +13,7 @@ welcome()
 #Problem 2: Write a function greeting() that accepts a single parameter, a string name, and 
 #prints the string "Welcome to The Hundred Acre Wood <name>! My name is Christopher Robin."
 
-print("\nproblem 2")
+print("\nProblem 2")
 
 def greeting(name):
     print(f"Welcome to The Hundred Acre Wood {name}! My name is Christopher Robin.")
@@ -25,7 +25,7 @@ greeting("Winnie the Pooh")
 #Problem 3: Write a function print_catchphrase() that accepts a string character as a 
 #parameter and prints the catchphrase of the given character.
 
-print("\nproblem 3")
+print("\nProblem 3")
 
 def print_catchphrase(character):
     if character == "Pooh":
@@ -37,7 +37,7 @@ def print_catchphrase(character):
     elif character == "Christopher Robin":
         print("Silly old bear!")
     else:
-        print(f"I don't know that {character}'s catchphrase.")
+        print(f"Sorry! I don't know that {character}'s catchphrase.")
 
 character = "Pooh"
 print_catchphrase(character) #"Oh bother!"
@@ -49,7 +49,8 @@ print_catchphrase(character) #"Sorry! I don't know Piglet's catchphrase!"
 #Problem 4: Implement a function get_item() that accepts a 0-indexed list items and 
 # a non-negative integer x and returns the element at index x in items. If x is 
 # not a valid index of items, return None.
-print("\nproblem 4")
+
+print("\nProblem 4")
 
 def get_item(items,x):
     if x <= len(items) -1:
@@ -69,7 +70,7 @@ print(get_item(items, x)) #None
 #Problem 5: Winnie the Pooh wants to know how much honey he has. Write a 
 # function sum_honey() that accepts a list of integers hunny_jars and returns 
 # the sum of all elements in the list. Do not use the built-in function sum().
-print("\nproblem 5")
+print("\nProblem 5")
 
 def sum_honey(hunny_jars):
     sum = 0
@@ -104,7 +105,7 @@ print(doubled(hunny_jars)) # [2, 4, 6]
 # of Poohsticks. count_less_than() should accept a list of integers race_times
 # and an integer threshold and return the number of race times less than threshold.
 
-print("\nproblem 7")
+print("\nProblem 7")
 
 def count_less_than(race_times,threshold):
     count = 0
@@ -178,11 +179,11 @@ print(can_pair(item_quantities)) # True
 print("\nProblem 10")
 
 def split_haycorns(quantity):
-    list = []
+    divisors = []
     for i in range(1, quantity + 1):
         if quantity % i ==0:
-            list.append(i)
-    return list
+            divisors.append(i)
+    return divisors
 
 quantity = 6
 print(split_haycorns(quantity)) # [1, 2, 3, 6]
@@ -216,7 +217,11 @@ s = "Hunny"
 print(tiggerfy(s)) # "hunny"
 
 #-------------------------------------
-#Problem 12: 
+#Problem 12: Pooh, Piglet, and Roo are looking for thistles to gift their 
+# friend Eeyore. Write a function locate_thistles() that takes in a list of 
+# strings items and returns a list of the indices of any elements with value
+# "thistle". The indices in the resulting list should be ordered from least 
+# to greatest.
 
 print("\nProblem 12")
 
