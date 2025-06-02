@@ -256,6 +256,5 @@ grid = [
 	[1, 1, 1, 1, 1],
 	[1, 1, 1, 1, 1]
 ]
-print(local_maximums(grid)) # 
 print(local_maximums(grid)) # [[2, 2, 2], [2, 2, 2], [2, 2, 2]]
     
