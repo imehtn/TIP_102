@@ -1,7 +1,12 @@
 #UPI: Understand, Plan, and Implement.
 
 #------------------------------------
-#Problem 1: 
+#Problem 1: Write a function reverse_sentence() that takes in a string sentence
+# and returns the sentence with the order of the words reversed. The sentence 
+# will contain only alphabetic characters and spaces to separate the words. If
+# there is only one word in the sentence, the function should return the 
+# original string.
+
 print("Problem 1")
 
 def reverse_sentence(sentence):
@@ -16,7 +21,15 @@ sentence = "Pooh"
 print(reverse_sentence(sentence)) # "Pooh"
 
 #------------------------------------
-#Problem 2: 
+#Problem 2: In the extended universe of fictional bears, Goldilocks finds an 
+# enticing list of numbers in the Three Bears' house. She doesn't want to take
+# a number that's too high or too low - she wants a number that's juuust right.
+# Write a function goldilocks_approved() that takes in the list of distinct 
+# positive integers nums and returns any number from the list that is neither 
+# the minimum nor the maximum value in the array, or -1 if there is no such 
+# number.
+
+#Return the selected integer.
 
 print("\nProblem 2")
 
@@ -39,7 +52,12 @@ nums = [2, 1, 3]
 print(goldilocks_approved(nums)) #2
 
 #------------------------------------
-#Problem 3: 
+#Problem 3: Pooh is eating all of his hunny jars in order of smallest to 
+# largest. Given a list of integers hunny_jar_sizes, write a function 
+# delete_minimum_elements() that continuously removes the minimum element 
+# until the list is empty. Return a new list of the elements of hunny_jar_sizes 
+# in the order in which they were removed.
+
 print("\nProblem 3")
 
 def delete_minimum_elements(jars):
@@ -57,7 +75,8 @@ hunny_jar_sizes = [5, 2, 1, 8, 2]
 print(delete_minimum_elements(hunny_jar_sizes)) # [1, 2, 2, 5, 8]
 
 #------------------------------------
-#Problem 4: 
+#Problem 4: Write a function sum_of_digits() that accepts an integer num and
+# returns the sum of num's digits.
 
 print("\nProblem 4")
 
@@ -75,7 +94,14 @@ num = 4
 print(sum_of_digits(num)) #4
 
 #------------------------------------
-#Problem 5: 
+#Problem 5: Tigger has developed a new programming language Tiger with only 
+# four operations and one variable tigger.
+
+#bouncy and flouncy both increment the value of the variable tigger by 1.
+#trouncy and pouncy both decrement the value of the variable tigger by 1.
+#Initially, the value of tigger is 1 because he's the only tigger around! 
+# Given a list of strings operations containing a list of operations, return 
+# the final value of tigger after performing all the operations.
 
 print("\nProblem 5")
 
@@ -97,7 +123,14 @@ operations = ["bouncy", "bouncy", "flouncy"]
 print(final_value_after_operations(operations)) # 4
 
 #------------------------------------
-#Problem 6:
+#Problem 6: Given an array of strings words and a string s, implement a function
+# is_acronym() that returns True if s is an acronym of words and returns False
+# otherwise.
+
+#The string s is considered an acronym of words if it can be formed by 
+# concatenating the first character of each string in words in order. For 
+# example, "pb" can be formed from ["pooh"", "bear"], but it can't be formed 
+# from ["bear", "pooh"].
 
 print("\nProblem 6")
 
@@ -113,7 +146,10 @@ s = "crm"
 print(is_acronym(words, s)) # True
 
 #------------------------------------
-#Problem 7:
+#Problem 7:Write a function make_divisible_by_3() that accepts an integer 
+# array nums. In one operation, you can add or subtract 1 from any element of 
+# nums. Return the minimum number of operations to make all elements of nums 
+# divisible by 3.
 
 print("\nProblem 7")
 
@@ -136,7 +172,9 @@ nums = [3, 6, 9]
 print(make_divisible_by_3(nums)) # 0
     
 #------------------------------------
-#Problem 8: 
+#Problem 8: Given two lists lst1 and lst2, write a function exclusive_elemts()
+# that returns a new list that contains the elements which are in lst1 but 
+# not in lst2 and the elements that are in lst2 but not in lst1.
 
 print("\nProblem 8")
 
@@ -165,7 +203,12 @@ lst2 = ["pooh", "roo", "piglet"]
 print(exclusive_elemts(lst1, lst2)) # [] 
 
 #------------------------------------
-#Problem 9: 
+#Problem 9: Write a function merge_alternately() that accepts two strings 
+# word1 and word2. Merge the strings by adding letters in alternating order, 
+# starting with word1. If a string is longer than the other, append the 
+# additional letters onto the end of the merged string.
+
+#Return the merged string.
 
 print("\nProblem 9")
 
@@ -196,7 +239,14 @@ word2 = "eo"
 print(merge_alternately(word1, word2)) # "eeyore"
 
 #------------------------------------
-#Problem 10: 
+#Problem 10: Eeyore has collected two piles of sticks to rebuild his house and
+# needs to choose pairs of sticks whose lengths are the right proportion. Write
+# a function good_pairs() that accepts two integer arrays pile1 and pile2 where
+# each integer represents the length of a stick. The function also accepts a 
+# positive integer k. The function should return the number of good pairs.
+
+#A pair (i, j) is called good if pile1[i] is divisible by pile2[j] * k. Assume
+# 0 <= i <= len(pile1) - 1 and 0 <= j <= len(pile2) - 1
 
 print("\nProblem 10")
 
