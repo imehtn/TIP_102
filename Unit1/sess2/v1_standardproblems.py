@@ -169,15 +169,52 @@ print(exclusive_elemts(lst1, lst2)) # []
 
 print("\nProblem 9")
 
+def merge_alternately(word1, word2):
+    merged = ""
+    
+    for char in range(max(len(word1),len(word2))):
+        if char > len(word1) - 1:
+            merged += word2[char]
+        elif char > len(word2) - 1:
+            merged += word1[char]
+        else:
+            merged += word1[char]
+            merged += word2[char]
+
+    return merged
+
+word1 = "wol"
+word2 = "oze"
+print(merge_alternately(word1, word2)) # "woozle"
+
+word1 = "hfa"
+word2 = "eflump"
+print(merge_alternately(word1, word2)) # "heffalump"
+
+word1 = "eyre"
+word2 = "eo"
+print(merge_alternately(word1, word2)) # "eeyore"
+
 #------------------------------------
 #Problem 10: 
 
 print("\nProblem 10")
 
-#-------------------------------------
-#Problem 11:
-print("\nProblem 11")
+def good_pairs(pile1,pile2,k):
+    count = 0
+    for i in range(len(pile1)):
+        for j in range(len(pile2)):
+            if pile1[i] % (pile2[j] * k) == 0:
+                count += 1
+                
+    return count
 
-#-------------------------------------
-#Problem 12: 
-print("\nProblem 12")
+pile1 = [1, 3, 4]
+pile2 = [1, 3, 4]
+k = 1
+print(good_pairs(pile1, pile2, k)) #5
+
+pile1 = [1, 2, 4, 12]
+pile2 = [2, 4]
+k = 3
+print(good_pairs(pile1, pile2, k)) #2
