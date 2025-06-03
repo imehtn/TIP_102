@@ -198,16 +198,22 @@ print(diagonal_sum(grid)) # 5
 
 print("\nProblem 8")
 
-def decrypt(code,k):
-    res = []
-    sum = 0
+def defuse(code, k):
+    n = len(code)
+    result = [0] * n
     
     if k == 0:
-        return [0] * len(code)
-    elif k < 0:
-            
-            
-    else:
-
-
+        return result
     
+    for i in range(n):
+        sum_val = 0
+        if k > 0:
+            for j in range(1, k + 1):
+                sum_val += code[(i + j) % n]
+        else:
+            for j in range(1, -k + 1):
+                sum_val += code[(i - j) % n]
+        
+        result[i] = sum_val
+    
+    return result
