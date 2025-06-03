@@ -66,16 +66,54 @@ print(remove_name(people, secret_identity))
 
 print("\nProblem 4")
 
+def count_digits(n):
+    count = 0
+    if n == 0:
+        count += 1
+    while n > 0:
+        n = n //10
+        count += 1
+    return count
+
+n = 964
+print(count_digits(n)) #3
+
+n = 0
+print(count_digits(n)) #1
+
 #------------------------------------
 #Problem 5: 
 
 print("\nProblem 5")
 
+def move_zeroes(nums):
+    count = 0
+    while 0 in nums:
+        nums.remove(0)
+        count +=1
+    return nums + [0] * count
+
+lst = [1, 0, 2, 0, 3, 0]
+print(move_zeroes(lst)) #[1,2,3,0,0,0]
 
 #------------------------------------
 #Problem 6:
 
 print("\nproblem 6")
+
+def reverse_vowel(s):
+    left = s[0]
+    right = s[-1]
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    
+    for char in s:
+        if left in vowels:
+            continue
+        else:
+            
+        if right in vowels: 
+            continue
+        
 
 
 #------------------------------------
