@@ -99,34 +99,73 @@ print(move_zeroes(lst)) #[1,2,3,0,0,0]
 #------------------------------------
 #Problem 6:
 
-print("\nproblem 6")
+print("\nProblem 6")
 
-def reverse_vowel(s):
-    left = s[0]
-    right = s[-1]
-    vowels = ['a', 'e', 'i', 'o', 'u']
+def reverse_vowels(s):
+    vowels = set("aeiouAEIOU")
+    s_list = list(s)
+    left, right = 0, len(s) - 1
     
-    for char in s:
-        if left in vowels:
-            continue
-        else:
-            
-        if right in vowels: 
-            continue
-        
+    while left < right:
+        while left < right and s_list[left] not in vowels:
+            left += 1
+        while left < right and s_list[right] not in vowels:
+            right -= 1
+        s_list[left], s_list[right] = s_list[right], s_list[left]
+        left += 1
+        right -= 1
+    
+    return ''.join(s_list)
+     
+s = "robin"
+print(reverse_vowels(s)) #"ribon"
 
+s = "BATgirl"
+print(reverse_vowels(s)) #BiTgArl
+
+s = "batman"
+print(reverse_vowels(s)) #batman
 
 #------------------------------------
 #Problem 7:
 
 print("\nProblem 7")
 
+def highest_altitude(gain):
+    start = 0
+    altitudes = [0]
+    for num in gain:
+        start += num
+        altitudes.append(start)
+        
+    return max(altitudes)
+
+gain = [-5, 1, 5, 0, -7]
+print(highest_altitude(gain)) #1
+
+gain = [-4, -3, -2, -1, 4, 3, 2]
+print(highest_altitude(gain)) #0
+        
+
 #------------------------------------
 #Problem 8: 
 
 print("\nProblem 8")
 
+def left_right_difference(nums):
+    ans = []
+    
+    for num in nums:
+        left_sum = sum(nums[:nums.index(num)])
+        right_sum = sum(nums[nums.index(num)+1:])
+        ans.append(left_sum - right_sum)
+    return ans
 
+nums = [10, 4, 8, 3]
+print(left_right_difference(nums)) # [-15, -1, 11, 22]
+
+nums = [1]
+print(left_right_difference(nums)) # [0]
 
 #------------------------------------
 #Problem 9: 
