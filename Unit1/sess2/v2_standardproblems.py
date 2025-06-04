@@ -172,16 +172,26 @@ print(left_right_difference(nums)) # [0]
 
 print("\nProblem 9")
 
+def common_elements(lst1, lst2):
+    common = []
+    for elem in lst1:
+        if elem in lst2:
+            common.append(elem)
+            
+    return common
+
+lst1 = ["super strength", "super speed", "x-ray vision"]
+lst2 = ["super speed", "time travel", "dimensional travel"]
+print(common_elements(lst1, lst2)) #["super speed"]
+
+lst1 = ["super strength", "super speed", "x-ray vision"]
+lst2 = ["martial arts", "stealth", "master detective"]
+print(common_elements(lst1, lst2)) #[]
+
 #------------------------------------
 #Problem 10: 
 
 print("\nProblem 10")
 
-#-------------------------------------
-#Problem 11:
-print("\nProblem 11")
-
-#-------------------------------------
-#Problem 12: 
-print("\nProblem 12")
-    
+def expose_superman(trust):
+     
