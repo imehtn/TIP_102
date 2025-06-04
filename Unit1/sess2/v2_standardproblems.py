@@ -193,5 +193,26 @@ print(common_elements(lst1, lst2)) #[]
 
 print("\nProblem 10")
 
-def expose_superman(trust):
-     
+def expose_superman(trust,n):
+    trusted = []
+    
+    for set in trust:
+        trusted.append(set[1])
+    
+    for i in range(len(trusted)):
+        if trusted[i] != trusted[i-1]:
+            return -1
+        
+    return trusted[0]
+    
+n = 2
+trust = [[1, 2]]
+print(expose_superman(trust, n))
+
+n = 3
+trust = [[1, 3], [2, 3]]
+print(expose_superman(trust, n))
+
+n = 3
+trust = [[1, 3], [2, 3], [3, 1]]
+print(expose_superman(trust, n))
