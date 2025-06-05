@@ -95,42 +95,59 @@ print(sort_by_parity(nums)) #[0]
 
 print("\nProblem 5")
 
- 
+def most_honey(height):
+    left = 0
+    right = len(height) - 1
+    max_honey = 0
+    
+    while left < right:
+        # Calculate the width
+        width = right - left
+        # Calculate the height of the container, which is the minimum of the two heights
+        current_height = min(height[left], height[right])
+        # Calculate the area
+        current_area = width * current_height
+        # Update max_honey if the current_area is larger
+        max_honey = max(max_honey, current_area)
+        
+        # Move the pointers
+        if height[left] < height[right]:
+            left += 1
+        else:
+            right -= 1
+    
+    return max_honey
+    
+height = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+print(most_honey(height))
 
+height = [1, 1]
+print(most_honey(height))
 
 #------------------------------------
 #Problem 6:
 
-print("\nproblem 6")
+print("\nProblem 6")
 
-
-#------------------------------------
-#Problem 7:
-
-print("\nProblem 7")
-
-#------------------------------------
-#Problem 8: 
-
-print("\nProblem 8")
-
-
-
-#------------------------------------
-#Problem 9: 
-
-print("\nProblem 9")
-
-#------------------------------------
-#Problem 10: 
-
-print("\nProblem 10")
-
-#-------------------------------------
-#Problem 11:
-print("\nProblem 11")
-
-#-------------------------------------
-#Problem 12: 
-print("\nProblem 12")
+def merge_intervals(intervals):
+    if not intervals:
+        return []
     
+    # Sort intervals by the starting point
+    intervals.sort(key=lambda x: x[0])
+    
+    merged = [intervals[0]]
+    
+    for current in intervals[1:]:
+        last = merged[-1]
+        if current[0] <= last[1]:  # Overlapping intervals
+            last[1] = max(last[1], current[1])
+        else:
+            merged.append(current)
+    
+    return merged
+intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
+print(merge_intervals(intervals))
+
+intervals = [[1, 4], [4, 5]]
+print(merge_intervals(intervals))
