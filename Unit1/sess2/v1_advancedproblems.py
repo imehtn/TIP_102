@@ -170,6 +170,7 @@ def merge_intervals(intervals):
     
     # Sort intervals by the starting point
     intervals.sort(key=lambda x: x[0])
+    print(intervals)
     
     merged = [intervals[0]]
     
@@ -181,6 +182,7 @@ def merge_intervals(intervals):
             merged.append(current)
     
     return merged
+
 intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
 print(merge_intervals(intervals))
 
