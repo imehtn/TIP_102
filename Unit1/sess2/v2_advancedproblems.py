@@ -90,40 +90,42 @@ print(two_sum(nums, target))#[1,2]
 
 print("\nProblem 5")
 
+def three_sum(nums):
+    nums.sort()
+    result = []
+    
+    for i in range(len(nums) - 2):
+        if i > 0 and nums[i] == nums[i - 1]:  # Skip duplicate values for i
+            continue
+        left, right = i + 1, len(nums) - 1
+        
+        while left < right:
+            total = nums[i] + nums[left] + nums[right]
+            if total == 0:
+                result.append([nums[i], nums[left], nums[right]])
+                while left < right and nums[left] == nums[left + 1]:  # Skip duplicates for left
+                    left += 1
+                while left < right and nums[right] == nums[right - 1]:  # Skip duplicates for right
+                    right -= 1
+                left += 1
+                right -= 1
+            elif total < 0:
+                left += 1
+            else:
+                right -= 1
+    
+    return result
+    
+nums = [-1, 0, 1, 2, -1, -4]
+print(three_sum(nums))
+
+nums = [0, 1, 1]
+print(three_sum(nums))
+
+nums = [0, 0, 0]
+print(three_sum(nums))
 
 #------------------------------------
 #Problem 6:
 
 print("\nproblem 6")
-
-
-#------------------------------------
-#Problem 7:
-
-print("\nProblem 7")
-
-#------------------------------------
-#Problem 8: 
-
-print("\nProblem 8")
-
-
-
-#------------------------------------
-#Problem 9: 
-
-print("\nProblem 9")
-
-#------------------------------------
-#Problem 10: 
-
-print("\nProblem 10")
-
-#-------------------------------------
-#Problem 11:
-print("\nProblem 11")
-
-#-------------------------------------
-#Problem 12: 
-print("\nProblem 12")
-    
