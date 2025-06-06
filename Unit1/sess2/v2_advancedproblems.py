@@ -19,13 +19,28 @@ matrix2 = [
     [3, 2, 1]
 ]
 
-print(add_matrices(matrix1, matrix2))
+print(add_matrices(matrix1, matrix2)) #[[10, 10, 10], [10, 10, 10], [10, 10, 10]]
 
 #------------------------------------
 #Problem 2: 
 
 print("\nProblem 2")
 
+def is_palindrome(s):
+    s.lower()
+    left, right = 0, len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
+
+s = "madam"
+print(is_palindrome(s)) #True
+
+s = "madamweb"
+print(is_palindrome(s)) #False
 
 #------------------------------------
 #Problem 3: 
