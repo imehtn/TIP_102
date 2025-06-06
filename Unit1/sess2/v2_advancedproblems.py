@@ -4,6 +4,22 @@
 #Problem 1: 
 print("Problem 1")
 
+def add_matrices(matrix1, matrix2):
+    return [[matrix1[i][j] + matrix2[i][j] for j in range(len(matrix1[0]))] for i in range(len(matrix1))]
+
+matrix1 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+matrix2 = [
+    [9, 8, 7],
+    [6, 5, 4],
+    [3, 2, 1]
+]
+
+print(add_matrices(matrix1, matrix2))
 
 #------------------------------------
 #Problem 2: 
