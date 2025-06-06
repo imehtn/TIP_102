@@ -46,6 +46,17 @@ print(is_palindrome(s)) #False
 #Problem 3: 
 print("\nProblem 3")
 
+
+def squash_spaces(s):
+    words = s.split()
+    return ' '.join(words)
+
+s = "   Up,     up,   and  away! "
+print(squash_spaces(s)) # "Up, up, and away!"
+
+s = "With great power comes great responsibility."
+print(squash_spaces(s)) # "With great power comes great responsibility."
+
 #------------------------------------
 #Problem 4: 
 
