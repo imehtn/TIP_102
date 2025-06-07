@@ -42,7 +42,7 @@ print("\nProblem 2")
 def hulk_smash(n):
     answer= []
     for i in range(1,n+1):
-        if i % 3 == 5 & i % 5 == 0:
+        if i % 3 == 5 and i % 5 == 0:
             answer.append("HulkSmash")
         elif i % 3 == 0:
             answer.append("Hulk")
@@ -90,9 +90,13 @@ print(shuffle(message, indices)) # findme
 # flight to distribute meals for the Metropolis Food Bank. He wants to 
 # distribute meals in the least number of trips possible.
 
-#Metropolis Food Bank currently stores meals in n packs where the ith pack contains meals[i] meals. There are also m empty boxes which can contain up to capacity[i] meals.
+#Metropolis Food Bank currently stores meals in n packs where the ith pack 
+# contains meals[i] meals. There are also m empty boxes which can contain up
+# to capacity[i] meals.
 
-#Given an array meals of length n and capacity of size m, write a function minimum_boxes() that returns the minimum number of boxes needed to redistribute the n packs of meals into boxes.
+#Given an array meals of length n and capacity of size m, write a function 
+# minimum_boxes() that returns the minimum number of boxes needed to 
+# redistribute the n packs of meals into boxes.
 
 #Note that meals from the same pack can be distributed into different boxes.
 
@@ -105,7 +109,7 @@ def minimum_boxes(meals,capacity):
     
     for box in capacity:
         if summed <= 0:
-            continue
+            break
         else:
             summed -= box
             count += 1
@@ -140,7 +144,7 @@ def wealthiest_customer(accounts):
     max = 0
     for index, customer in enumerate(accounts, start=0):
         total = sum(customer)
-        if total > max:
+        if total >= max:
             max = total
             res = [index, total]
             
@@ -150,7 +154,7 @@ accounts = [
 	[1, 2, 3],
 	[3, 2, 1]
 ]
-print(wealthiest_customer(accounts)) #[1, 6]
+print(wealthiest_customer(accounts)) #[0, 6] or [1, 6]
 
 accounts = [
 	[1, 5],

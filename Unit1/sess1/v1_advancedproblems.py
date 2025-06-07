@@ -37,9 +37,9 @@ print("\nProblem 2")
 def final_value_after_operations(operations):
     value = 1
     for operation in operations:
-        if operation == "bouncy" or operation == "flouncy":
+        if operation in ["bouncy", "flouncy"]:
             value += 1
-        elif operation == "trouncy" or operation == "pouncy":
+        elif operation in ["trouncy", "pouncy"]:
             value -= 1
     return value
 
@@ -74,7 +74,7 @@ word = "eggplant"
 print(tiggerfy(word)) #eplan
 
 word = "Choir"
-print(tiggerfy(word)) #chor
+print(tiggerfy(word)) #Chor
 
 
 #------------------------------------
@@ -160,13 +160,11 @@ print(find_missing_clues(clues, lower, upper))#[]
 print("\nProblem 6")
 
 def harvest(vegetable_patch):
-    n=len(vegetable_patch)
-    m = len(vegetable_patch[0])
     
     count = 0
-    for row in range (n):
-        for col in range(m):
-            if vegetable_patch[row][col] == 'c':
+    for row in vegetable_patch:
+        for col in row:
+            if col == 'c':
                 count+=1
     return count
 
@@ -194,8 +192,8 @@ print("\nProblem 7")
 
 def good_pairs(pile1,pile2,k):
     count = 0
-    for index, i in enumerate(pile1,start=0):
-        for index, j in enumerate(pile2, start=0):
+    for i in pile1:
+        for j in pile2:
             num = j * k
             if i % num == 0:
                 count += 1
