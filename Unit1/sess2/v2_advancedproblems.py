@@ -89,6 +89,7 @@ print(two_sum(nums, target))#[1,2]
 #Problem 5: 
 
 print("\nProblem 5")
+#how to solve more efficiently? this has n^3 complexity
 
 def three_sum(nums):
     nums.sort()
@@ -117,15 +118,48 @@ def three_sum(nums):
     return result
     
 nums = [-1, 0, 1, 2, -1, -4]
-print(three_sum(nums))
+print(three_sum(nums)) #[[-1, -1, 2], [-1, 0, 1]]
 
 nums = [0, 1, 1]
-print(three_sum(nums))
+print(three_sum(nums)) #[]
 
 nums = [0, 0, 0]
-print(three_sum(nums))
+print(three_sum(nums)) #[[0, 0, 0]]
 
 #------------------------------------
 #Problem 6:
 
-print("\nproblem 6")
+print("\nProblem 6")
+
+def insert_interval(intervals, new_interval):
+    
+    merged = []
+    i = 0
+    n = len(intervals)
+
+    # Add all intervals that come before the new interval
+    while i < n and intervals[i][1] < new_interval[0]:
+        merged.append(intervals[i])
+        i += 1
+
+    # Merge intervals that overlap with the new interval
+    while i < n and intervals[i][0] <= new_interval[1]:
+        new_interval[0] = min(new_interval[0], intervals[i][0])
+        new_interval[1] = max(new_interval[1], intervals[i][1])
+        i += 1
+    merged.append(new_interval)
+
+    # Add the remaining intervals
+    while i < n:
+        merged.append(intervals[i])
+        i += 1
+
+    return merged
+
+intervals = [[1, 3], [6, 9]]
+new_interval = [2, 5]
+print(insert_interval(intervals, new_interval))
+
+intervals = [[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]]
+new_interval = [4, 8]
+print(insert_interval(intervals, new_interval))
