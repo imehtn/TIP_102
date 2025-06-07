@@ -132,12 +132,53 @@ print(max_audience_performances(audiences2))
 
 print("\nProblem 7")
 
+def max_audience_performaces(audiences):
+    if not audiences:
+        return 0
+    
+    # Step 1: Find the maximum audience size
+    max_audience = max(audiences)
+    size_map = {}
+
+    # Step 2: Count occurrences of each audience size
+    for audience in audiences:
+        if audience in size_map:
+            size_map[audience] += 1
+        else:
+            size_map[audience] = 1
+
+    # Step 3: Calculate combined audience size for performances with max audience size
+    return size_map[max_audience] * max_audience    
+
+audiences1 = [100, 200, 200, 150, 100, 250]
+audiences2 = [120, 180, 220, 150, 220]
+
+print(max_audience_performances(audiences1))
+print(max_audience_performances(audiences2))
+
 #------------------------------------
 #Problem 8: 
 
 print("\nProblem 8")
 
+from collections import Counter
 
+def num_popular_pairs(popularity_score):
+    counter = Counter(popularity_score)
+    popular_pairs = 0
+    for count in counter.values():
+        if count > 1:
+            popular_pairs += (count * (count - 1)) // 2
+    
+    return popular_pairs
+
+popularity_scores1 = [1, 2, 3, 1, 1, 3]
+popularity_scores2 = [1, 1, 1, 1]
+popularity_scores3 = [1, 2, 3]
+
+print(num_popular_pairs(popularity_scores1))
+print(num_popular_pairs(popularity_scores2))
+print(num_popular_pairs(popularity_scores3)) 
 
 #------------------------------------
 #Problem 9: 
