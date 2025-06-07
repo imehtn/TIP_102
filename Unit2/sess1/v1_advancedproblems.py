@@ -55,18 +55,78 @@ print(total_sales(ticket_sales))
 
 print("\nProblem 4")
 
+def identify_conflicts(venue1_schedule, venue2_schedule):
+    venue1 = venue1_schedule.items()
+    venue2 = venue2_schedule.items()
+    conflicts = venue1 & venue2
+    return conflicts
+
+venue1_schedule = {
+    "Stromae": "9:00 PM",
+    "Janelle Monáe": "8:00 PM",
+    "HARDY": "7:00 PM",
+    "Bruce Springsteen": "6:00 PM"
+}
+
+venue2_schedule = {
+    "Stromae": "9:00 PM",
+    "Janelle Monáe": "10:30 PM",
+    "HARDY": "7:00 PM",
+    "Wizkid": "6:00 PM"
+}
+
+print(identify_conflicts(venue1_schedule, venue2_schedule))
+
 #------------------------------------
 #Problem 5: 
 
 print("\nProblem 5")
 
+def best_set(votes):
+    toset = votes.items()
+    best = max(toset, key=lambda x: x[0])
+    return best[1]
+
+votes1 = {
+    1234: "SZA", 
+    1235: "Yo-Yo Ma",
+    1236: "Ethel Cain",
+    1237: "Ethel Cain",
+    1238: "SZA",
+    1239: "SZA"
+}
+
+votes2 = {
+    1234: "SZA", 
+    1235: "Yo-Yo Ma",
+    1236: "Ethel Cain",
+    1237: "Ethel Cain",
+    1238: "SZA"
+}
+
+print(best_set(votes1))
+print(best_set(votes2))
 
 #------------------------------------
 #Problem 6:
 
 print("\nproblem 6")
+def max_audience_performances(audiences):
+    
+    maximum = max(audiences)
+    audiences.remove(maximum)
+    total = maximum
+    for perf in audiences:
+       if perf == maximum:
+           total += perf
+    return total   
 
+audiences1 = [100, 200, 200, 150, 100, 250]
+audiences2 = [120, 180, 220, 150, 220]
 
+print(max_audience_performances(audiences1))
+print(max_audience_performances(audiences2))
+ 
 #------------------------------------
 #Problem 7:
 
