@@ -1,7 +1,11 @@
 #UPI: Understand, Plan, and Implement.
 
 #------------------------------------
-#Problem 1: 
+#Problem 1: Write a function add_matrices() that accepts to n x m matrices 
+# matrix1 and matrix2. The function should return an n x m matrix sum_matrix 
+# that is the sum of the given matrices such that each value in sum_matrix is
+# the sum of values of corresponding elements in matrix1 and matrix2.
+
 print("Problem 1")
 
 def add_matrices(matrix1, matrix2):
@@ -22,7 +26,20 @@ matrix2 = [
 print(add_matrices(matrix1, matrix2)) #[[10, 10, 10], [10, 10, 10], [10, 10, 10]]
 
 #------------------------------------
-#Problem 2: 
+#Problem 2: Write a function is_palindrome() that takes in a string s as a 
+# parameter and returns True if the string is a palindrome and False 
+# otherwise. You may assume the string contains only lowercase alphabetic 
+# characters.
+
+#The function must use the two-pointer approach, which is a common technique 
+# in which we initialize two variables (also called a pointer in this context)
+# to track different indices or places in a list or string, then moves the 
+# pointers to point at new indices based on certain conditions. In the most 
+# common variation of the two-pointer approach, we initialize one variable to
+# point at the beginning of a list and a second variable/pointer to point at 
+# the end of list. We then shift the pointers to move inwards through the list
+# towards each other, until our problem is solved or the pointers reach the 
+# opposite ends of the list.
 
 print("\nProblem 2")
 
@@ -43,7 +60,12 @@ s = "madamweb"
 print(is_palindrome(s)) #False
 
 #------------------------------------
-#Problem 3: 
+#Problem 3: Write a function squash_spaces() that takes in a string s as a 
+# parameter and returns a new string with each substring with consecutive 
+# spaces reduced to a single space. Assume s can contain leading or trailing 
+# spaces, but in the result should be trimmed. Do not use any of the built-in 
+# trim methods.
+
 print("\nProblem 3")
 
 
@@ -58,7 +80,11 @@ s = "With great power comes great responsibility."
 print(squash_spaces(s)) # "With great power comes great responsibility."
 
 #------------------------------------
-#Problem 4: 
+#Problem 4: Use the two pointer approach to implement a function two_sum() 
+# that takes in a sorted list of integers nums and an integer target as 
+# parameters and returns the indices of the two numbers that add up to target.
+# You may assume that each input would have exactly one solution, and you may 
+# not use the same element twice. You can return the indices in any order.
 
 print("\nProblem 4")
 
@@ -86,7 +112,11 @@ target = 18
 print(two_sum(nums, target))#[1,2]
 
 #------------------------------------
-#Problem 5: 
+#Problem 5: Given an integer array nums, return all the triplets [nums[i],
+# nums[j], nums[k]] such that i != j, i != k, and j != k, and 
+# nums[i] + nums[j] + nums[k] == 0.
+
+#Notice that the solution set must not contain duplicate triplets.
 
 print("\nProblem 5")
 #how to solve more efficiently? this has n^3 complexity
@@ -127,7 +157,21 @@ nums = [0, 0, 0]
 print(three_sum(nums)) #[[0, 0, 0]]
 
 #------------------------------------
-#Problem 6:
+#Problem 6: Implement a function insert_interval() that accepts an array of 
+# non-overlapping intervals intervals where intervals[i] = [starti, endi] 
+# represent the start and the end of the ith interval and intervals is sorted 
+# in ascending order by starti. The function also accepts an interval 
+# new_interval = [start, end] that represents the start and end of another 
+# interval.
+
+#Insert new_interval into intervals such that intervals is still sorted in 
+# ascending order by starti and intervals still does not have any overlapping 
+# intervals (merge overlapping intervals if necessary).
+
+#Return intervals after the insertion.
+
+#You don't need to modify intervals in-place. You can make a new array and 
+# return it.
 
 print("\nProblem 6")
 
