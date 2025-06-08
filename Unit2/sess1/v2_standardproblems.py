@@ -317,4 +317,21 @@ print(frequency_sort(signals3))
 #-------------------------------------
 #Problem 12: 
 print("\nProblem 12")
+
+def find_final_hub(paths):
+    #to dct
+    dct = dict(paths)
+    #for all paths
+    for path in paths:
+        #if destination is not a key in dtc
+        if path[1] not in dct:
+            #return destination
+            return path[1]
     
+paths1 = [["Earth", "Mars"], ["Mars", "Titan"], ["Titan", "Europa"]]
+paths2 = [["Alpha", "Beta"], ["Gamma", "Alpha"], ["Beta", "Delta"]]
+paths3 = [["StationA", "StationZ"]]
+
+print(find_final_hub(paths1)) 
+print(find_final_hub(paths2)) 
+print(find_final_hub(paths3))
