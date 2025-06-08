@@ -12,7 +12,7 @@ print("Problem 1")
 def lineup(artists, set_times):
     zipped = zip(artists, set_times)
     
-    return sorted(zipped, key=lambda x: x[1])
+    return dict(zipped)
 
 artists1 = ["Kendrick Lamar", "Chappell Roan", "Mitski", "Rosalia"]
 set_times1 = ["9:30 PM", "5:00 PM", "2:00 PM", "7:30 PM"]
@@ -38,7 +38,8 @@ print(lineup(artists2, set_times2))
 print("\nProblem 2")
 
 def get_artist_info(artist, festival_schedule):
-    return festival_schedule.get(artist, "Artist not found.")
+    error ={"message": "artist not found"}
+    return festival_schedule.get(artist, error)
     
 festival_schedule = {
     "Blood Orange": {"day": "Friday", "time": "9:00 PM", "stage": "Main Stage"},
@@ -59,8 +60,7 @@ print("\nProblem 3")
 
 def total_sales(ticket_sales):
     values = ticket_sales.values()
-    total = sum(values)
-    return total
+    return sum(values)
 
 ticket_sales = {"Friday": 200, "Saturday": 1000, "Sunday": 800, "3-Day Pass": 2500}
 
@@ -78,10 +78,11 @@ print(total_sales(ticket_sales))
 print("\nProblem 4")
 
 def identify_conflicts(venue1_schedule, venue2_schedule):
+    #tuple pairs in lists
     venue1 = venue1_schedule.items()
     venue2 = venue2_schedule.items()
-    conflicts = venue1 & venue2
-    return conflicts
+    #return items that are in both
+    return venue1 & venue2
 
 venue1_schedule = {
     "Stromae": "9:00 PM",
@@ -107,10 +108,12 @@ print(identify_conflicts(venue1_schedule, venue2_schedule))
 
 print("\nProblem 5")
 
+
 def best_set(votes):
-    toset = votes.items()
-    best = max(toset, key=lambda x: x[0])
-    return best[1]
+    from collections import Counter
+    vote_counts = Counter(votes.values())
+    # Get the artist with the highest vote count
+    return vote_counts.most_common(1)[0][0]
 
 votes1 = {
     1234: "SZA", 
