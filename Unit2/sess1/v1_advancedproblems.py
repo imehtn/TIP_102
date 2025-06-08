@@ -185,6 +185,28 @@ print(num_popular_pairs(popularity_scores3))
 
 print("\nProblem 9")
 
+def find_stage_arrangement_difference(s,t):
+    pos1 = {}
+    pos2 = {}
+    
+    for i, artist in enumerate(s):
+        pos1[artist] = i
+    
+    difference = 0
+    for j, artist in enumerate(t):
+        pos2[artist] = j
+        difference += abs(pos1[artist] - pos2[artist])
+    
+    return difference
+
+s1 = ["Alice", "Bob", "Charlie"]
+t1 = ["Bob", "Alice", "Charlie"]
+s2 = ["Alice", "Bob", "Charlie", "David", "Eve"]
+t2 = ["Eve", "David", "Bob", "Alice", "Charlie"]
+
+print(find_stage_arrangement_difference(s1, t1))
+print(find_stage_arrangement_difference(s2, t2))
+
 #------------------------------------
 #Problem 10: 
 
