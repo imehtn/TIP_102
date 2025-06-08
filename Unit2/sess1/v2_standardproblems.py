@@ -214,6 +214,47 @@ print(find_difference(signals1_example2, signals2_example2))
 
 print("\nProblem 9")
 
+def find_common_signals(signals1, signals2):
+    #declare empty list
+    lst = []
+    #sort 1 and 2
+    signals1.sort()
+    signals2.sort()
+    from collections import Counter 
+    #make into dicts by using counter function
+    sig1 = Counter(signals1)
+    sig2 = Counter(signals2)
+
+    #go through each elem in 1 and see if it is in 2
+    count1 = 0
+    for key, count in sig1.items():
+        #if it is, append count to empty list
+        if key in sig2:
+            count1 += count
+    lst.append(count1)
+    
+    count2 = 0
+    for key, count in sig2.items():
+    #go through each elem in 2  and see if it is in 1
+        #if it is, append count to lists
+        if key in sig1:
+            count2 += count
+    lst.append(count2)
+    
+    return lst
+
+signals1_example1 = [2, 3, 2]
+signals2_example1 = [1, 2]
+print(find_common_signals(signals1_example1, signals2_example1))
+
+signals1_example2 = [4, 3, 2, 3, 1]
+signals2_example2 = [2, 2, 5, 2, 3, 6]
+print(find_common_signals(signals1_example2, signals2_example2))
+
+signals1_example3 = [3, 4, 2, 3]
+signals2_example3 = [1, 5]
+print(find_common_signals(signals1_example3, signals2_example3))
+
 #------------------------------------
 #Problem 10: 
 
