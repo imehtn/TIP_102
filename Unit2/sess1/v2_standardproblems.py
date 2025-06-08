@@ -214,7 +214,7 @@ print(find_difference(signals1_example2, signals2_example2))
 
 print("\nProblem 9")
 
-def find_common_signals(signals1, signals2):
+def find_common_signals1(signals1, signals2):
     #declare empty list
     lst = []
     #sort 1 and 2
@@ -245,6 +245,41 @@ def find_common_signals(signals1, signals2):
 
 signals1_example1 = [2, 3, 2]
 signals2_example1 = [1, 2]
+print(find_common_signals1(signals1_example1, signals2_example1))
+
+signals1_example2 = [4, 3, 2, 3, 1]
+signals2_example2 = [2, 2, 5, 2, 3, 6]
+print(find_common_signals1(signals1_example2, signals2_example2))
+
+signals1_example3 = [3, 4, 2, 3]
+signals2_example3 = [1, 5]
+print(find_common_signals1(signals1_example3, signals2_example3))
+
+#------------------------------------
+#Problem 10: 
+
+print("\nProblem 10")
+
+def find_common_signals(signals1, signals2):
+    set1 = set(signals1)
+    set2 = set(signals2)
+    lst = []
+    count1 = 0
+    for sig in signals1:
+        if sig in set2:
+            count1+=1
+    lst.append(count1)
+    
+    count2 = 0
+    for sig in signals2:
+        if sig in set1:
+            count2+=1
+    lst.append(count2)
+    
+    return lst
+
+signals1_example1 = [2, 3, 2]
+signals2_example1 = [1, 2]
 print(find_common_signals(signals1_example1, signals2_example1))
 
 signals1_example2 = [4, 3, 2, 3, 1]
@@ -255,14 +290,29 @@ signals1_example3 = [3, 4, 2, 3]
 signals2_example3 = [1, 5]
 print(find_common_signals(signals1_example3, signals2_example3))
 
-#------------------------------------
-#Problem 10: 
-
-print("\nProblem 10")
-
 #-------------------------------------
 #Problem 11:
 print("\nProblem 11")
+
+def frequency_sort(signals):
+    freq = {}
+    for signal in signals:
+        if signal in freq:
+            freq[signal] += 1
+        else:
+            freq[signal] = 1
+
+    sorted_signals = sorted(signals, key=lambda x: (freq[x], -x))
+        
+    return sorted_signals
+
+signals1 = [1, 1, 2, 2, 2, 3]
+signals2 = [2, 3, 1, 3, 2]
+signals3 = [-1, 1, -6, 4, 5, -6, 1, 4, 1]
+
+print(frequency_sort(signals1)) 
+print(frequency_sort(signals2)) 
+print(frequency_sort(signals3))
 
 #-------------------------------------
 #Problem 12: 
