@@ -1,7 +1,14 @@
 #UPI: Understand, Plan, and Implement.
 
 #------------------------------------
-#Problem 1: 
+#Problem 1: Given two lists of length n, crew and position, map the space 
+# station crew to their position on board the international space station.
+
+#Each crew member crew[i] has job position[i] on board, where 0 <= i < n and 
+# len(crew) == len(position).
+
+#Hint: Introduction to dictionaries
+
 print("Problem 1")
 
 def space_crew(crew, position):
@@ -20,7 +27,12 @@ print(space_crew(ax3_crew, ax3_positions))
 
 
 #------------------------------------
-#Problem 2: 
+#Problem 2: Given a dictionary planets that maps planet names to a dictionary 
+# containing the planet's number of moons and orbital period, write a function
+# planet_lookup() that accepts a string planet_name and returns a string in 
+# the form Planet <planet_name> has an orbital period of <orbital period> 
+# Earth days and has <number of moons> moons. If planet_name is not a key in 
+# planets, return "Sorry, I have no data on that planet.".
 
 print("\nProblem 2")
 
@@ -58,7 +70,13 @@ print(planet_lookup(planetary_info, "Pluto"))
 
 
 #------------------------------------
-#Problem 3: 
+#Problem 3: As part of your job as an astronaut, you need to perform routine 
+# safety checks. You are given a dictionary oxygen_levels which maps room 
+# names to current oxygen levels and two integers min_val and max_val 
+# specifying the acceptable range of oxygen levels. Return a list of room 
+# names whose values are outside the range defined by min_val and max_val 
+# (inclusive).
+
 print("\nProblem 3")
 
 def check_oxygen_levels(oxygen_levels, min_val, max_val):
@@ -89,7 +107,9 @@ max_val = 22
 print(check_oxygen_levels(oxygen_levels, min_val, max_val))
 
 #------------------------------------
-#Problem 4: 
+#Problem 4: Write a function data_difference() that accepts two dictionaries 
+# experiment1 and experiment2 and returns a new dictionary that contains only 
+# key-value pairs found exclusively in experiment1 but not in experiment2.
 
 print("\nProblem 4")
 
@@ -107,7 +127,13 @@ print(data_difference(exp1_data, exp2_data))
 
 
 #------------------------------------
-#Problem 5: 
+#Problem 5: NASA has asked the public to vote on a new name for one of the 
+# nodes in the International Space Station. Given a list of strings votes 
+# where each string in the list is a voter's suggested new name, implement a 
+# function get_winner() that returns the suggestion with the most number of 
+# votes.
+
+#If there is a tie, return either option.
 
 print("\nProblem 5")
 
@@ -124,7 +150,11 @@ print(get_winner(votes1))
 print(get_winner(votes2))
 
 #------------------------------------
-#Problem 6:
+#Problem 6:Ground control has sent a transmission containing important 
+# information. A complete transmission is one where every letter of the 
+# English alphabet appears at least once.
+
+#Given a string transmission containing only lowercase English letters, return true if the transmission is complete, or false otherwise.
 
 print("\nproblem 6")
 
@@ -154,7 +184,16 @@ print(check_if_complete_transmission(transmission1))
 print(check_if_complete_transmission(transmission2))
 
 #------------------------------------
-#Problem 7:
+#Problem 7: Ground control is analyzing signal patterns received from 
+# different probes. You are given a 0-indexed array signals consisting of 
+# distinct strings.
+
+#The string signals[i] can be paired with the string signals[j] if the string 
+# signals[i] is equal to the reversed string of signals[j]. 0 <= i < j < 
+# len(signals). Return the maximum number of pairs that can be formed from 
+# the array signals.
+
+#Note that each string can belong in at most one pair.
 
 print("\nProblem 7")
 
@@ -184,7 +223,24 @@ print(max_number_of_string_pairs(signals2))
 print(max_number_of_string_pairs(signals3))
 
 #------------------------------------
-#Problem 8: 
+#Problem 8: You are given two 0-indexed integer arrays signals1 and signals2, 
+# representing signal data from two different probes. Return a list answer of 
+# size 2 where:
+
+#answer[0] is a list of all distinct integers in signals1 which are not 
+# present in signals2.
+#answer[1] is a list of all distinct integers in signals2 which are not 
+# present in signals1.
+
+#Note that the integers in the lists may be returned in any order.
+
+#Below is the pseudocode for the problem. Implement this in Python and 
+# explain your implementation step-by-step.
+
+#1. Convert signals1 and signals2 to sets.
+#2. Find the difference between set1 and set2 and store it in diff1.
+#3. Find the difference between set2 and set1 and store it in diff2.
+#4. Return the list [diff1, diff2].
 
 print("\nProblem 8")
 
@@ -210,7 +266,13 @@ print(find_difference(signals1_example1, signals2_example1))
 print(find_difference(signals1_example2, signals2_example2))
 
 #------------------------------------
-#Problem 9: 
+#Problem 9: Two space probes have collected signals represented by integer 
+# arrays signals1 and signals2 of sizes n and m, respectively. Calculate the 
+# following values:
+
+#answer1: the number of indices i such that signals1[i] exists in signals2.
+#answer2: the number of indices j such that signals2[j] exists in signals1.
+#Return [answer1, answer2].
 
 print("\nProblem 9")
 
@@ -256,7 +318,13 @@ signals2_example3 = [1, 5]
 print(find_common_signals1(signals1_example3, signals2_example3))
 
 #------------------------------------
-#Problem 10: 
+#Problem 10: If you implemented find_common_signals() in the previous problem
+# using dictionaries, try implementing find_common_signals() again using sets 
+# instead of dictionaries. If you implemented find_common_signals() using sets,
+# use dictionaries this time.
+
+#Once you've come up with your second solution, compare the two. Is one 
+# solution better than the other? How so? Why or why not?
 
 print("\nProblem 10")
 
@@ -291,7 +359,15 @@ signals2_example3 = [1, 5]
 print(find_common_signals(signals1_example3, signals2_example3))
 
 #-------------------------------------
-#Problem 11:
+#Problem 11: Ground control needs to analyze the frequency of signal data 
+# received from different probes. Given an array of integers signals, sort 
+# the array in increasing order based on the frequency of the values. If 
+# multiple values have the same frequency, sort them in decreasing order. 
+# Return the sorted array.
+
+#Below is a buggy or incomplete version of the solution. Identify and fix the 
+# bugs in the code. Then, perform a code review and suggest improvements.
+
 print("\nProblem 11")
 
 def frequency_sort(signals):
@@ -315,7 +391,14 @@ print(frequency_sort(signals2))
 print(frequency_sort(signals3))
 
 #-------------------------------------
-#Problem 12: 
+#Problem 12: You are given an array paths, where paths[i] = [hubA, hubB] means
+# there exists a direct communication path going from hubA to hubB. Return 
+# the final communication hub, that is, the hub without any outgoing path to 
+# another hub.
+
+#It is guaranteed that the paths form a line without any loops, therefore, 
+# there will be exactly one final communication hub.
+
 print("\nProblem 12")
 
 def find_final_hub(paths):
