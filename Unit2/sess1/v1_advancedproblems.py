@@ -30,8 +30,25 @@ print(total_treasures(treasure_map2))
 print("\nProblem 2")
 
 def can_trust_message(message):
-    alph = "abcdefghijklmnopqrstuvxyz"
     
+    #for each char in the message
+    from collections import Counter
+    dict_counts = Counter(message)
+    
+    #alphabet
+    alph = "abcdefghijklmnopqrstuvwxyz "
+    #for all letters of the alphaber
+    for char in alph:
+        #if char not a key in counts, return false
+        if char not in dict_counts:
+            return False
+    return True
+
+message1 = "sphinx of black quartz judge my vow"
+message2 = "trust me"
+
+print(can_trust_message(message1))
+print(can_trust_message(message2))
     
 #------------------------------------
 #Problem 3: 
