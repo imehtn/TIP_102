@@ -4,13 +4,35 @@
 #Problem 1: 
 print("Problem 1")
 
+def total_treasures(treasure_map):
+    val = treasure_map.values()
+    return sum(val)
+    
+treasure_map1 = {
+    "Cove": 3,
+    "Beach": 7,
+    "Forest": 5
+}
+
+treasure_map2 = {
+    "Shipwreck": 10,
+    "Cave": 20,
+    "Lagoon": 15,
+    "Island Peak": 5
+}
+
+print(total_treasures(treasure_map1)) 
+print(total_treasures(treasure_map2))
 
 #------------------------------------
 #Problem 2: 
 
 print("\nProblem 2")
 
-
+def can_trust_message(message):
+    alph = "abcdefghijklmnopqrstuvxyz"
+    
+    
 #------------------------------------
 #Problem 3: 
 print("\nProblem 3")
