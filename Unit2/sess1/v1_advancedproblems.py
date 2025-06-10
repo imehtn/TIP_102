@@ -79,6 +79,30 @@ print(find_duplicate_chests(chests3))
 
 print("\nProblem 4")
 
+def is_balanced(code):
+    dct = {}
+    #add each char to a dict + its count 
+    for char in code:
+        if char in dct.keys():
+            dct[char] += 1
+        else:
+            dct[char] = 1
+            
+    #transform vals into list
+    count = list(dct.values())
+    #if one val is not the same, see if it can be by +1 or -1
+    for i in range(len(count)-1):
+        if count[i] != count[i-1] and count[i] != [i+1]:
+            if count[i] + 1 == count [i-1] or count[i] - 1 == count [i-1]:
+                return True
+    return False
+
+code1 = "arghh"
+code2 = "haha"
+
+print(is_balanced(code1)) 
+print(is_balanced(code2)) 
+
 #------------------------------------
 #Problem 5: 
 
