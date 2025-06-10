@@ -293,6 +293,7 @@ def counting_pirates_action_minutes(logs, k):
         dct[pirate_id].add(min)
     #for each pirate in dict
     for pirate, min in dct.items():
+        #if the amt of unique vals is less than k, add then to lst
         if len(min) <= k:
             lst[len(min) - 1] += 1
         
