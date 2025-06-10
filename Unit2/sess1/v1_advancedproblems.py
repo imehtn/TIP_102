@@ -281,4 +281,27 @@ print(min_steps_to_match_maps(map1_3, map2_3))
 
 print("\nProblem 8")
 
+def counting_pirates_action_minutes(logs, k):
+    #initialize return list [0] * k
+    lst = [0] * k
+    dct = {}
+    #for each elem in logs
+    for pirate_id, min in logs:
+        #add pirate as key to dict, let value be a list of its mins
+        if pirate_id not in dct:
+            dct[pirate_id] = set()
+        dct[pirate_id].add(min)
+    #for each pirate in dict
+    for pirate, min in dct.items():
+        if len(min) <= k:
+            lst[len(min) - 1] += 1
+        
+    return lst
+           
+logs1 = [[0, 5], [1, 2], [0, 2], [0, 5], [1, 3]]
+k1 = 5
+logs2 = [[1, 1], [2, 2], [2, 3]]
+k2 = 4
 
+print(counting_pirates_action_minutes(logs1, k1)) 
+print(counting_pirates_action_minutes(logs2, k2))
