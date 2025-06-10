@@ -3,7 +3,34 @@
 #------------------------------------
 #Problem 1: 
 print("Problem 1")
+def analyze_library(library_catalog, actual_distribution):
+    #dict to store results
+    res = {}
+    #for every room
+    for room, number in actual_distribution.items():
+        #if room is not added to the dictionary
+        if room not in res:
+            #add the room as key and the diff b/w actual aand expected as value
+            res[room] = number - library_catalog[room]
+    
+    return res 
+    
+library_catalog = {
+    "Room A": 150,
+    "Room B": 200,
+    "Room C": 250,
+    "Room D": 300
+}
 
+actual_distribution = {
+    "Room A": 150,
+    "Room B": 190,
+    "Room C": 260,
+    "Room D": 300
+}
+
+
+print(analyze_library(library_catalog, actual_distribution))
 
 #------------------------------------
 #Problem 2: 
