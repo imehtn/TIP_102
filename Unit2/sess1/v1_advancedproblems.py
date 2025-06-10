@@ -230,6 +230,37 @@ print(organize_pirate_crew(group_sizes2))
 
 print("\nProblem 7")
 
+def min_steps_to_match_maps(map1, map2):
+    #get the num count for map1 and map2
+    from collections import Counter 
+    count1 = Counter(map1)
+    count2 = Counter(map2)
+    count = 0
+    #for each char in map
+    for key, value in count1.items():
+        #if char not in map2:
+        if key not in count2.keys():
+            #increase count
+            count += value
+        #if char count not the same
+        else:
+            if count2[key] > value:
+                count += count2[key] - value       
+            #add difference to count
+            
+    return count
+  
+map1_1 = "bab"
+map2_1 = "aba"
+map1_2 = "treasure"
+map2_2 = "huntgold"
+map1_3 = "anagram"
+map2_3 = "mangaar"
+
+print(min_steps_to_match_maps(map1_1, map2_1))
+print(min_steps_to_match_maps(map1_2, map2_2))
+print(min_steps_to_match_maps(map1_3, map2_3))          
+
 #------------------------------------
 #Problem 8: Captain Dread is keeping track of the crew's activities using a 
 # log. The logs are represented by a 2D integer array logs where each 
