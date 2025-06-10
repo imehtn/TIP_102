@@ -192,8 +192,26 @@ print(find_treasure_indices(gold_amounts3, target3))
 
 print("\nProblem 6")
 
-#def organize_pirate_crew(group_sizes):
-   
+def organize_pirate_crew(group_sizes):
+     # Step 1: Initialize the dictionary
+    size_to_pirates = {}
+    
+    # Step 2: Fill the dictionary with group sizes
+    for pirate, size in enumerate(group_sizes):
+        if size not in size_to_pirates:
+            size_to_pirates[size] = []
+        size_to_pirates[size].append(pirate)
+    
+    # Step 3: Initialize the result list
+    result = []
+    
+    # Step 4: Form groups
+    for size, pirates in size_to_pirates.items():
+        for i in range(0, len(pirates), size):
+            result.append(pirates[i:i + size])
+    
+    return result
+    
     
 
 #------------------------------------
