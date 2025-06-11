@@ -48,6 +48,30 @@ print(find_common_artifacts(artifacts1, artifacts2))
 #Problem 3: 
 print("\nProblem 3")
 
+def declutter(souvernirs, threshold):
+    #initiate list to return
+    below_threshold = []
+    #create counter for souvernirs
+    from collections import Counter
+    counting = Counter(souvernirs)
+    #for each souvernir in counter
+    for key, val in counting.items():
+        #if value is more than threshold
+        if val < threshold:
+            #add key to lst
+            below_threshold.append(key)
+    
+    return below_threshold
+
+souvenirs1 = ["coin", "alien egg", "coin", "coin", "map", "map", "statue"]
+threshold1 = 3
+print(declutter(souvenirs1, threshold1))
+
+souvenirs2 = ["postcard", "postcard", "postcard", "sword"]
+threshold = 2
+print(declutter(souvenirs2, threshold))
+
+
 #------------------------------------
 #Problem 4: 
 
@@ -76,22 +100,3 @@ print("\nProblem 7")
 print("\nProblem 8")
 
 
-
-#------------------------------------
-#Problem 9: 
-
-print("\nProblem 9")
-
-#------------------------------------
-#Problem 10: 
-
-print("\nProblem 10")
-
-#-------------------------------------
-#Problem 11:
-print("\nProblem 11")
-
-#-------------------------------------
-#Problem 12: 
-print("\nProblem 12")
-    
