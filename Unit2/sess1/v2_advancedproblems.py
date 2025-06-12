@@ -1,7 +1,19 @@
 #UPI: Understand, Plan, and Implement.
 
 #------------------------------------
-#Problem 1: 
+#Problem 1: In the ancient Library of Alexandria, a temporal rift has 
+# scattered several important scrolls across different rooms. You are given a
+# dictionary library_catalog that maps room names to the number of scrolls 
+# that room should have and a second dictionary actual_distribution that maps
+# room names to the number of scrolls found in that room after the temporal 
+# rift.
+
+#Write a function analyze_library() that determines if any room has more or
+# fewer scrolls than it should. The function should return a dictionary 
+# where the keys are the room names and the values are the differences in
+# the number of scrolls (actual number of scrolls - expected number of 
+# scrolls). You must loop over the dictionaries to compute the differences.
+
 print("Problem 1")
 def analyze_library(library_catalog, actual_distribution):
     #dict to store results
@@ -32,7 +44,15 @@ actual_distribution = {
 print(analyze_library(library_catalog, actual_distribution))
 
 #------------------------------------
-#Problem 2: 
+#Problem 2: You've spent your last few trips exploring different periods of 
+# Ancient Greece. During your travels, you discover several interesting 
+# artifacts. Some artifacts appear in multiple time periods, while others in
+# just one.
+
+#You are given two lists of strings artifacts1 and artifacts2 representing
+# the artifacts found in two different time periods. Write a function 
+# find_common_artifacts() that returns a list of artifacts common to both 
+# time periods.
 
 print("\nProblem 2")
 
@@ -45,7 +65,12 @@ artifacts2 = ["Golden Vase", "Silver Sword", "Bronze Shield"]
 print(find_common_artifacts(artifacts1, artifacts2))
 
 #------------------------------------
-#Problem 3: 
+#Problem 3: As a time traveler, you've collected a mountain of souvenirs over 
+# the course of your travels. You're running out of room to store them all 
+# and need to declutter. Given a list of strings souvenirs and a integer 
+# threshold, declutter your souvenirs by writing a function declutter() that
+# returns a list of souvenirs strictly below threshold.
+
 print("\nProblem 3")
 
 def declutter(souvernirs, threshold):
@@ -73,7 +98,13 @@ print(declutter(souvenirs2, threshold))
 
 
 #------------------------------------
-#Problem 4: 
+#Problem 4: In your time travel adventures, you are given an array of digit 
+# strings portals and a digit string destination. Return the number of pairs
+# of indices (i, j) (where i != j) such that the concatenation of portals[i]
+# + portals[j] equals destination.
+
+#Note: For index values i and j, the pairs (i, j) and (j, i) are considered 
+# different - order matters.
 
 print("\nProblem 4")
 
@@ -110,7 +141,16 @@ print(num_of_time_portals(portals2, destination2))
 print(num_of_time_portals(portals3, destination3))
 
 #------------------------------------
-#Problem 5: 
+#Problem 5: As a time traveler, you have recorded the occurrences of specific
+# events at different time points. You suspect that some events might be
+# occurring too frequently within short time spans, indicating potential 
+# temporal anomalies. Given an array time_points where each element 
+# represents an event ID at a particular time point, and an integer k, 
+# determine if there are two distinct time points i and j such that 
+# time_points[i] == time_points[j] and the absolute difference between i and 
+# j is at most k.
+
+#Note: The indices must be unique, but not the values i and j themselves.
 
 print("\nProblem 5")
 
@@ -144,7 +184,29 @@ print(detect_temporal_anomaly(time_points2, k2))
 print(detect_temporal_anomaly(time_points3, k3)) 
 
 #------------------------------------
-#Problem 6:
+#Problem 6: A group of time travelers are competing in a series of races to 
+# see who can hop through time portals the fastest, from the medieval era to
+# the year 4050.
+
+#You're given a list of race outcomes in the form of an integer array races,
+# where each element races[i] = [winner, loser] indicates that the traveler 
+# winner defeated the traveler loser in a race.
+
+#Write a function find_travelers() that accepts the integer array races as a
+# parameter and returns a list answer of length 2 where:
+
+#answer[0] is a list of all travelers who have not lost any races.
+
+#answer[1] is a list of all travelers who have lost exactly one race.
+
+#Both the input list races and your output list answer should be sorted in 
+# increasing order.
+
+#Note: Only include travelers who have competed in at least one race — that
+# is, those who appear as either a winner or a loser in the input list races.
+# For example, if races = [[1,2], [5, 6], that may imply the existence of 
+# racers 3 and 4. However, since neither racer 3 nor 4 is included in the 
+# input list, 3 and 4 should also not appear in the output list answer.
 
 print("\nproblem 6")
 
@@ -176,7 +238,11 @@ print(find_travelers(races1))
 print(find_travelers(races2)) 
 
 #------------------------------------
-#Problem 7:
+#Problem 7: As a time traveling linguist, you are analyzing texts written in 
+# an ancient script. However, some words in the text are illegible and can't
+# be deciphered. Write a function find_most_frequent_word() that accepts a
+# string text and a list of illegible words illegibles and returns the most
+# frequent word in text that is not an illegible word.
 
 print("\nProblem 7")
 
@@ -219,13 +285,25 @@ illegibles2 = ["hit"]
 print(find_most_frequent_word(paragraph2, illegibles2))     
 
 #------------------------------------
-#Problem 8: 
+#Problem 8: In your time travel adventures, you have been collecting data on 
+# the usage of different time portals by various travelers. The data is 
+# represented by an array usage_records, where usage_records[i] = 
+# [traveler_name, portal_number, time_used] indicates that the traveler 
+# traveler_name used the portal portal_number at the time time_used.
+
+#Return the adventure's "display table". The "display table" is a table whose
+# row entries denote how many times each portal was used at each specific 
+# time. The first column is the portal number and the remaining columns 
+# correspond to each unique time in chronological order. The first row should 
+# be a header whose first column is "Portal", followed by the times in 
+# chronological order. Note that the traveler names are not part of the table. Additionally, the rows should be sorted in numerically increasing order.
 
 print("\nProblem 8")
 
 def display_time_portal_usage(usage_records):
-    #dct
+    #dict for portal as key and times as values
     dct = {}
+    #set for the unique times 
     times = set()
     #loop through usage records
     for name, portal, time in usage_records:
@@ -233,26 +311,33 @@ def display_time_portal_usage(usage_records):
         if portal not in dct:
             dct[portal] = []
         dct[portal].append(time)
+        #add time to set
         times.add(time)
-    
+    #first row formula
     first_row = ["Portal"]
     first_row += sorted(times)
     
+    #count the travels for each portal for each time 
     from collections import Counter
     ans = []
     for portal, times in dct.items():
+        #initialize to zeros 
         row = [0] * len(first_row)
+        #first elem is portal
         row[0] = int(portal)
         count = Counter(times)
+        #for each time, add count to portal row 
         for time in sorted(times):
             index = first_row.index(time)
             row[index] = count.get(time, 0)
-            
+        #append row for this portal
         ans.append(row)
-    
+    #sort ans based on portal number
     ans.sort()
+    #make ans elems all strings
     matrix = [[str(elem) for elem in row] for row in ans]
     
+    #return list of first row and matrix elems 
     return [first_row + matrix]
        
 
