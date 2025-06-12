@@ -148,6 +148,29 @@ print(detect_temporal_anomaly(time_points3, k3))
 
 print("\nproblem 6")
 
+def find_travelers(races):
+    losers = []
+    winners = set()
+    #loop through each race
+    for winner, loser in races:
+        #add winners to one list
+        winners.add(winner)
+        #add losers to another list
+        losers.append(loser)
+    #count both lists using Counter
+    from collections import Counter
+    counter = Counter(losers)
+    zeros = [winner for winner in winners if winner not in counter.keys()]
+    ones = [key for key, value in counter.items() if value == 1 ]
+
+    return [sorted(zeros), sorted(ones)]
+    #return lst of 0 losses and 1 loss
+
+races1 = [[1, 3], [2, 3], [3, 6], [5, 6], [5, 7], [4, 5], [4, 8], [4, 9], [10, 4], [10, 9]]
+races2 = [[2, 3], [1, 3], [5, 4], [6, 4]]
+
+print(find_travelers(races1))  
+print(find_travelers(races2)) 
 
 #------------------------------------
 #Problem 7:
