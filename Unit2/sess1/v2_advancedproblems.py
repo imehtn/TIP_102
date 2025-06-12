@@ -78,15 +78,21 @@ print(declutter(souvenirs2, threshold))
 print("\nProblem 4")
 
 def num_of_time_portals(portals, destination): 
+    #count the number of instances for every portal on the lst
     from collections import Counter
     count_portals = Counter(portals)
+    #start counter for pairs
     count = 0
+    #for all portals 
     for portal in portals:
+        #to-be-concatenated string calculated here
         required = destination[len(portal):]
+        #if the required string is indict
         if required in count_portals:
             # Decrease count if portal == required to avoid counting same index pairs
             if portal == required:
                 count += count_portals[required] - 1
+            #add the value of occurences
             else:
                 count += count_portals[required]
     
@@ -108,6 +114,34 @@ print(num_of_time_portals(portals3, destination3))
 
 print("\nProblem 5")
 
+def detect_temporal_anomaly(time_point, k):
+    #empty dict
+    dct = {}
+    #add key = time, value = lst of indices
+    for index, time in enumerate(time_point):
+        if time not in dct:
+            dct[time] = []
+        dct[time].append(index)
+    #for each key
+    for value in dct.values():
+        #if the diff between the indices is < k
+        if abs(value[0] - value[-1]) <k:
+            return True
+
+    return False
+
+time_points1 = [1, 2, 3, 1]
+k1 = 3
+
+time_points2 = [1, 0, 1, 1]
+k2 = 1
+
+time_points3 = [1, 2, 3, 1, 2, 3]
+k3 = 2
+
+print(detect_temporal_anomaly(time_points1, k1))  
+print(detect_temporal_anomaly(time_points2, k2)) 
+print(detect_temporal_anomaly(time_points3, k3)) 
 
 #------------------------------------
 #Problem 6:
