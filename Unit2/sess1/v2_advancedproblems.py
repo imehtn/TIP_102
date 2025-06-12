@@ -160,9 +160,12 @@ def find_travelers(races):
     #count both lists using Counter
     from collections import Counter
     counter = Counter(losers)
+    #append to zeros if no losses and in winners but not in losers
     zeros = [winner for winner in winners if winner not in counter.keys()]
+    #append losers who have lost once only
     ones = [key for key, value in counter.items() if value == 1 ]
 
+    #return sorted 
     return [sorted(zeros), sorted(ones)]
     #return lst of 0 losses and 1 loss
 
@@ -177,9 +180,97 @@ print(find_travelers(races2))
 
 print("\nProblem 7")
 
+def find_most_frequent_word(text, illegibles):
+    from collections import Counter
+    # Convert the text to lowercase
+    text = text.lower()
+    
+    # Create a set of illegible words for quick lookup
+    illegible_set = set(illegibles)
+    
+    # Remove punctuation by replacing them with spaces
+    cleaned_text = ""
+    for char in text:
+        if char.isalnum() or char.isspace():
+            cleaned_text += char
+        else:
+            cleaned_text += " "
+    
+    # Split the cleaned text into words
+    words = cleaned_text.split()
+    
+    # Remove illegible words
+    words = [word for word in words if word not in illegible_set]
+    
+    # Use Counter to count the frequency of each word
+    word_counts = Counter(words)
+    
+    # Find the word with the maximum frequency
+    most_frequent_word = word_counts.most_common(1)[0][0] if word_counts else ""
+    
+    return most_frequent_word
+        
+paragraph1 = "a."
+illegibles1 = []
+print(find_most_frequent_word(paragraph1, illegibles1)) 
+
+paragraph2 = "Bob hit a ball, the hit BALL flew far after it was hit."
+illegibles2 = ["hit"]
+print(find_most_frequent_word(paragraph2, illegibles2))     
+
 #------------------------------------
 #Problem 8: 
 
 print("\nProblem 8")
 
+def display_time_portal_usage(usage_records):
+    #dct
+    dct = {}
+    times = set()
+    #loop through usage records
+    for name, portal, time in usage_records:
+        #add portal and time to dct as key, value
+        if portal not in dct:
+            dct[portal] = []
+        dct[portal].append(time)
+        times.add(time)
+    
+    first_row = ["Portal"]
+    first_row += sorted(times)
+    
+    from collections import Counter
+    ans = []
+    for portal, times in dct.items():
+        row = [0] * len(first_row)
+        row[0] = int(portal)
+        count = Counter(times)
+        for time in sorted(times):
+            index = first_row.index(time)
+            row[index] = count.get(time, 0)
+            
+        ans.append(row)
+    
+    ans.sort()
+    matrix = [[str(elem) for elem in row] for row in ans]
+    
+    return [first_row + matrix]
+       
 
+usage_records1 = [["David","3","10:00"],
+                  ["Corina","10","10:15"],
+                  ["David","3","10:30"],
+                  ["Carla","5","11:00"],
+                  ["Carla","5","10:00"],
+                  ["Rous","3","10:00"]]
+usage_records2 = [["James","12","11:00"],
+                  ["Ratesh","12","11:00"],
+                  ["Amadeus","12","11:00"],
+                  ["Adam","1","09:00"],
+                  ["Brianna","1","09:00"]]
+usage_records3 = [["Laura","2","08:00"],
+                  ["Jhon","2","08:15"],
+                  ["Melissa","2","08:30"]]
+
+print(display_time_portal_usage(usage_records1))
+print(display_time_portal_usage(usage_records2))
+print(display_time_portal_usage(usage_records3))
