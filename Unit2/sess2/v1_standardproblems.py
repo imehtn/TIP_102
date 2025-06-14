@@ -114,6 +114,28 @@ print(prioritize_observations(observed_species2, priority_species2))
 
 print("\nProblem 5")
 
+def distinct_averages(species_populations):
+    #unitialize set for averages 
+    averages = set()
+    #while listb not empty
+    while species_populations:
+    #get min and max with functions
+        minimum = min(species_populations)
+        species_populations.remove(minimum)
+        maximum = max(species_populations)
+        species_populations.remove(maximum)
+        #take their average and add it to the set
+        average = (minimum + maximum)/2
+        averages.add(average)
+    
+    #return len(seet), numbers in the set
+    return len(averages)
+
+species_populations1 = [4,1,4,0,3,5]
+species_populations2 = [1,100]
+
+print(distinct_averages(species_populations1))
+print(distinct_averages(species_populations2)) 
 
 #------------------------------------
 #Problem 6:
