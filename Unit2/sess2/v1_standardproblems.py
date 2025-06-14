@@ -81,6 +81,34 @@ print(navigate_research_station(station_layout2, observations2))
 
 print("\nProblem 4")
 
+def prioritize_observations(observed_species, priority_species):
+    #count all in obserbed species 
+    from collections import Counter 
+    count_species = Counter(observed_species)
+    #empty list res
+    res = []
+    #for every in priority
+    for species in priority_species:
+        num = count_species[species]
+        #add the number of from observed
+        for count in range(num):
+            res.append(species)
+    #new set for those in observed species not in empty list
+    different = [value for value in observed_species if value not in res]
+    #sort new set in asserting order 
+    different.sort()
+    # return res + new list
+    return res + different
+    
+observed_species1 = ["🐯", "🦁", "🦌", "🦁", "🐯", "🐘", "🐍", "🦑", "🐻", "🐯", "🐼"]
+priority_species1 = ["🐯", "🦌", "🐘", "🦁"]  
+
+observed_species2 = ["bluejay", "sparrow", "cardinal", "robin", "crow"]
+priority_species2 = ["cardinal", "sparrow", "bluejay"]
+
+print(prioritize_observations(observed_species1, priority_species1))
+print(prioritize_observations(observed_species2, priority_species2)) 
+
 #------------------------------------
 #Problem 5: 
 
