@@ -41,8 +41,6 @@ def is_authentic_collection(art_pieces):
     expected = list(range(1, n))
     expected.append(n-1)
     
-    print(expected)
-
     return art_pieces == expected 
 
 collection1 = [2, 1, 3]
@@ -56,6 +54,43 @@ print(is_authentic_collection(collection3))
 #------------------------------------
 #Problem 3: 
 print("\nProblem 3")
+
+def organize_exhibition(collection):
+    from collections import Counter
+    counting = Counter(collection)
+    
+    # Step 2: Create a dictionary of unique prints grouped by their counts
+    unique_prints = {}
+    for print_name, count in counting.items():
+        if count in unique_prints:
+            unique_prints[count].append(print_name)
+        else:
+            unique_prints[count] = [print_name]
+    
+    # Step 3: Determine the number of rows needed
+    max_count = max(counting.values())
+    
+    # Step 4: Initialize the 2D array (rows) to store the organized prints
+    rows = [[] for _ in range(max_count)]
+    
+    # Step 5: Distribute prints into rows
+    for count, prints in unique_prints.items():
+        for i in range(count):
+            for print_name in prints:
+                rows[i].append(print_name)
+    
+    # Step 6: Remove any empty rows
+    result = [row for row in rows if row]
+    
+    return result
+            
+
+collection1 = ["O'Keefe", "Kahlo", "Picasso", "O'Keefe", "Warhol", 
+              "Kahlo", "O'Keefe"]
+collection2 = ["Kusama", "Monet", "Ofili", "Banksy"]
+
+print(organize_exhibition(collection1))
+print(organize_exhibition(collection2))
 
 #------------------------------------
 #Problem 4: 
