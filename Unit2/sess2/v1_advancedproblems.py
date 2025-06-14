@@ -97,14 +97,96 @@ print(organize_exhibition(collection2))
 
 print("\nProblem 4")
 
+def subdomain_visits(cpdomains):
+    unique = {}
+    for num in cpdomains:
+        num, domain = num.split()
+        num = int(num)
+        
+        splitted = domain.split(".")
+        
+        # Step 3: Create subdomains and count visits
+        for i in range(len(splitted)):
+            subdomain = '.'.join(splitted[i:])
+            if subdomain in unique:
+                unique[subdomain] += num
+            else:
+                unique[subdomain] = num
+    
+    res = []
+    for key, value in unique.items():
+        ans = str(value) + " " + str(key)
+        res.append(ans)
+    
+    return res
+    
+cpdomains1 = ["9001 modern.artmuseum.com"]
+cpdomains2 = ["900 abstract.gallery.com", "50 impressionism.com", 
+              "1 contemporary.gallery.com", "5 medieval.org"]
+
+print(subdomain_visits(cpdomains1))
+print(subdomain_visits(cpdomains2))
+
 #------------------------------------
 #Problem 5: 
 
 print("\nProblem 5")
 
+def beauty_sum(collection):
+    total_beauty = 0
+    
+    # Generate all substrings
+    for i in range(len(collection)):
+        freq = {}
+        for j in range(i, len(collection)):
+            char = collection[j]
+            if char in freq:
+                freq[char] += 1
+            else:
+                freq[char] = 1
+            
+            # Calculate the beauty of the current substring
+            max_freq = max(freq.values())
+            min_freq = min(freq.values())
+            
+            total_beauty += (max_freq - min_freq)
+    
+    return total_beauty
+
+print(beauty_sum("aabcb")) 
+print(beauty_sum("aabcbaa"))
 
 #------------------------------------
-#Problem 6:
+#Problem 6: You have a list of integers collection_sizes representing the 
+# sizes of different art collections in your gallery and are trying to 
+# determine how to group them to best fit in your space. Given an integer k 
+# write a function count_divisible_collections() that returns the number of 
+# non-empty subarrays (contiguous parts of the array) where the sum of the 
+# sizes is divisible by k.
 
 print("\nproblem 6")
 
+def count_divisible_collections(collection_sizes, k):
+    prefix_sum = 0
+    count = 0
+    prefix_count = {0: 1}  # Initialize with 0: 1 to handle cases where the prefix sum itself is divisible by k
+    
+    for size in collection_sizes:
+        prefix_sum += size
+        mod = prefix_sum % k
+        
+        if mod in prefix_count:
+            count += prefix_count[mod]
+            prefix_count[mod] += 1
+        else:
+            prefix_count[mod] = 1
+    
+    return count
+
+nums1 = [4, 5, 0, -2, -3, 1]
+k1 = 5
+nums2 = [5]
+k2 = 9
+
+print(count_divisible_collections(nums1, k1))  
+print(count_divisible_collections(nums2, k2))  
