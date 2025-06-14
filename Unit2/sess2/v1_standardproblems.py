@@ -142,6 +142,22 @@ print(distinct_averages(species_populations2))
 
 print("\nproblem 6")
 
+def max_species_copies(raised_species, target_species):
+    #turn raised into a counter dict
+    from collections import Counter
+    count_species = Counter(raised_species)
+    #get minimum if counter dict values 
+    minimum = min(count_species.values())
+    
+    return minimum
+
+raised_species1 = "abcba"
+target_species1 = "abc"
+print(max_species_copies(raised_species1, target_species1))  # Output: 1
+
+raised_species2 = "aaaaabbbbcc"
+target_species2 = "abc"
+print(max_species_copies(raised_species2, target_species2)) # Output: 2
 
 #------------------------------------
 #Problem 7:
