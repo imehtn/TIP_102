@@ -191,11 +191,17 @@ print(count_unique_species(ecosystem_data3))
 print("\nProblem 8")
 
 def num_equiv_species_pairs(species_pairs):
+    #sort list
     sorted_list = [sorted(pair) for pair in species_pairs]
+    #make res list of same size
     counter = [0] * len(sorted_list)
+    #parse through the original list
     for val in sorted_list:
+        #count each instance
         counter[sorted_list.index(val)] += 1
     
+    print(counter)
+    #equation
     count = 0
     for num in counter:
         count += (num * (num-1))//2
@@ -207,21 +213,3 @@ species_pairs2 = [[1,2],[1,2],[1,1],[1,2],[2,2]]
 
 print(num_equiv_species_pairs(species_pairs1))
 print(num_equiv_species_pairs(species_pairs2))
-
-#------------------------------------
-#Problem 9: 
-
-print("\nProblem 9")
-
-#------------------------------------
-#Problem 10: 
-
-print("\nProblem 10")
-
-#-------------------------------------
-#Problem 11:
-print("\nProblem 11")
-
-#-------------------------------------
-#Problem 12: 
-print("\nProblem 12")
