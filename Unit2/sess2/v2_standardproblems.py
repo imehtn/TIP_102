@@ -175,8 +175,62 @@ print(most_popular_even_destination(destinations3))
 
 print("\nProblem 7")
 
+def is_valid_itinerary(itinerary):
+    #sort nums
+    itinerary.sort()
+    #make expected
+    n = len(itinerary)
+    expected = [num for num in range(1,n)]
+    expected.append(n-1)
+    
+    #compare results
+    return itinerary == expected
+     
+itinerary1 = [2, 1, 3]
+itinerary2 = [1, 3, 3, 2]
+itinerary3 = [1, 1]
+
+print(is_valid_itinerary(itinerary1))
+print(is_valid_itinerary(itinerary2))
+print(is_valid_itinerary(itinerary3))
+
 #------------------------------------
 #Problem 8: 
 
 print("\nProblem 8")
 
+def find_attractions(tourist_list1, tourist_list2):
+    common = set(tourist_list1) & set(tourist_list2)
+
+    #dct of location n=and distance 
+    dct = {}
+    for location in common:
+        if location not in dct:
+            dct[location] = 0
+        index1 = tourist_list1.index(location)
+        index2 = tourist_list2.index(location)
+        dct[location] = index1 + index2
+    
+    res = []
+    minimum = min(dct.values())
+    
+    for key, val in dct.items():
+        if val == minimum:
+            res.append(key)
+    
+    return res
+    
+tourist_list1 = ["Eiffel Tower","Louvre Museum","Notre-Dame","Disneyland"]
+tourist_list2 = ["Colosseum","Trevi Fountain","Pantheon","Eiffel Tower"]
+
+print(find_attractions(tourist_list1, tourist_list2))
+
+tourist_list1 = ["Eiffel Tower","Louvre Museum","Notre-Dame","Disneyland"]
+tourist_list2 = ["Disneyland","Eiffel Tower","Notre-Dame"]
+
+print(find_attractions(tourist_list1, tourist_list2))
+
+tourist_list1 = ["beach","mountain","forest"]
+tourist_list2 = ["mountain","beach","forest"]
+
+print(find_attractions(tourist_list1, tourist_list2))
