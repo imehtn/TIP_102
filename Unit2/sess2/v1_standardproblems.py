@@ -4,12 +4,55 @@
 #Problem 1: 
 print("Problem 1")
 
+def most_endangered(species_list):
+    min = float('inf')
+    pop = ""
+    for dct in species_list:
+        if dct["population"] < min:
+            dct["population"] = min
+            pop = dct["name"]
+    return pop
+
+species_list = [
+    {"name": "Amur Leopard",
+     "habitat": "Temperate forests",
+     "population": 84
+    },
+    {"name": "Javan Rhino",
+     "habitat": "Tropical forests",
+     "population": 72
+    },
+    {"name": "Vaquita",
+     "habitat": "Marine",
+     "population": 10
+    }
+]
+
+print(most_endangered(species_list))
+       
 
 #------------------------------------
 #Problem 2: 
 
 print("\nProblem 2")
+def count_endangered_species(endangered_species, observed_species):
+    dct = {}
+    for species in observed_species:
+        if species in endangered_species:
+            if species not in dct:
+                dct[species] = 0 
+            dct[species] += 1
+    
+    return sum(dct.values())
 
+endangered_species1 = "aA"
+observed_species1 = "aAAbbbb"
+
+endangered_species2 = "z"
+observed_species2 = "ZZ"
+
+print(count_endangered_species(endangered_species1, observed_species1)) 
+print(count_endangered_species(endangered_species2, observed_species2))  
 
 #------------------------------------
 #Problem 3: 
