@@ -164,6 +164,27 @@ print(max_species_copies(raised_species2, target_species2)) # Output: 2
 
 print("\nProblem 7")
 
+def count_unique_species(ecosystem_data):
+    new_str = ""
+    for char in ecosystem_data:
+        if char.isdigit():
+            if int(char) != 0:
+                new_str += char
+        else:
+            new_str += " "
+    
+    nums = new_str.split()
+    
+    return len(set(nums))
+
+ecosystem_data1 = "f123de34g8hi34"
+ecosystem_data2 = "species1234forest234"
+ecosystem_data3 = "x1y01z001"
+
+print(count_unique_species(ecosystem_data1))
+print(count_unique_species(ecosystem_data2))
+print(count_unique_species(ecosystem_data3))
+
 #------------------------------------
 #Problem 8: 
 
