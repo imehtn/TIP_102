@@ -58,6 +58,24 @@ print(count_endangered_species(endangered_species2, observed_species2))
 #Problem 3: 
 print("\nProblem 3")
 
+def navigate_research_station(station_layout, observations):
+    start = 0
+    total = 0
+    for obs in observations:
+        total += abs(start - station_layout.index(obs))
+        start = station_layout.index(obs)
+    
+    return total
+
+station_layout1 = "pqrstuvwxyzabcdefghijklmno"
+observations1 = "wildlife"
+
+station_layout2 = "abcdefghijklmnopqrstuvwxyz"
+observations2 = "cba"
+
+print(navigate_research_station(station_layout1, observations1))  
+print(navigate_research_station(station_layout2, observations2))
+
 #------------------------------------
 #Problem 4: 
 
