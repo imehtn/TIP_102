@@ -36,6 +36,34 @@ print(max_attempts(ingredients3, target_meal3))
 
 print("\nProblem 2")
 
+def is_similar(sentence1, sentence2, similar_pairs):
+    
+    if len(sentence1) != len(sentence2):
+        return False
+    
+    for i in range(len(sentence1)):
+        if sentence1[i] == sentence2[i]:
+            continue
+        else: 
+            found = False
+            for pair in similar_pairs:
+                if sentence2[i] in pair and sentence1[i] in pair:
+                    found = True
+                    break 
+            if not found: return False
+                
+    return True
+
+sentence1 = ["my", "type", "on", "paper"]
+sentence2 = ["my", "type", "in", "theory"]
+similar_pairs = [ ["on", "in"], ["paper", "theory"]]
+
+sentence3 = ["no", "tea", "no", "shade"]
+sentence4 = ["no", "offense"]
+similar_pairs2 = [["shade", "offense"]]
+
+print(is_similar(sentence1, sentence2, similar_pairs))
+print(is_similar(sentence3, sentence4, similar_pairs2))
 
 #------------------------------------
 #Problem 3: 
