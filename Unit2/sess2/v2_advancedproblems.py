@@ -4,6 +4,32 @@
 #Problem 1: 
 print("Problem 1")
 
+def max_attempts(ingredients, target_meal):
+    #initialize hasmap 
+    counting = {}
+    #for every char in target meal
+    for char in ingredients:
+        #count how many times that char appears in ingredients
+        if char in target_meal:
+            if char not in counting:
+                counting[char] = 0
+            counting[char] += 1
+        #add key val pair to haskmap
+        
+    #return min val from hashmap
+    return min(counting.values())
+
+ingredients1 = "aabbbcccc"
+target_meal1 = "abc"
+print(max_attempts(ingredients1, target_meal1))
+
+ingredients2 = "ppppqqqrrr"
+target_meal2 = "pqr"
+print(max_attempts(ingredients2, target_meal2))
+
+ingredients3 = "ingredientsforcooking"
+target_meal3 = "cooking"
+print(max_attempts(ingredients3, target_meal3))
 
 #------------------------------------
 #Problem 2: 
@@ -32,33 +58,3 @@ print("\nProblem 5")
 print("\nproblem 6")
 
 
-#------------------------------------
-#Problem 7:
-
-print("\nProblem 7")
-
-#------------------------------------
-#Problem 8: 
-
-print("\nProblem 8")
-
-
-
-#------------------------------------
-#Problem 9: 
-
-print("\nProblem 9")
-
-#------------------------------------
-#Problem 10: 
-
-print("\nProblem 10")
-
-#-------------------------------------
-#Problem 11:
-print("\nProblem 11")
-
-#-------------------------------------
-#Problem 12: 
-print("\nProblem 12")
-    
